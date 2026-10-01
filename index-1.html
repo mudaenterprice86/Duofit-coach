@@ -125,6 +125,89 @@
     background:rgba(5,30,18,.55);white-space:nowrap;}
   .role-card .rc-arrow{width:24px;height:24px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;}
   .role-card .rc-chev{width:14px;height:14px;margin-left:4px;}
+
+  /* --- Kondisi Program Hari Ini --- */
+  .today-status{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
+  .tl-card{border-radius:12px;padding:12px 8px;text-align:center;cursor:pointer;border:1px solid transparent;transition:transform .1s;}
+  .tl-card:active{transform:scale(.97);}
+  .tl-num{font-family:'Oswald',sans-serif;font-weight:700;font-size:28px;line-height:1;}
+  .tl-label{font-size:11px;font-weight:600;margin-top:6px;line-height:1.25;}
+  .tl-cap{font-size:10px;margin-top:3px;opacity:.8;}
+  .tl-red{background:#FDECEA;border-color:#F3B8B1;color:#A32E21;}
+  .tl-yellow{background:#FFF6DB;border-color:#EBD58A;color:#8A6A00;}
+  .tl-green{background:#E1F6E8;border-color:#A9DDBC;color:#146C43;}
+  .today-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .today-of{font-size:15px;color:var(--muted);font-weight:500;}
+  .today-warn{border-color:#F3B8B1;background:#FFF8F7;}
+
+  /* --- Format pertemuan --- */
+  .sx-card{border-bottom:1px solid var(--line);padding:12px 4px;}
+  .sx-card:last-child{border-bottom:none;}
+  .sx-head{display:flex;gap:12px;align-items:center;}
+  .sx-date{flex:none;width:52px;text-align:center;background:var(--accent-dim);border:1px solid var(--line);border-radius:10px;padding:6px 0;}
+  .sx-date .d{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--accent);line-height:1;}
+  .sx-date .m{font-size:10.5px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.4px;}
+  .sx-date.empty .d{font-size:16px;color:var(--muted);}
+  .sx-title{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;line-height:1.2;}
+  .sx-goal{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.35;word-break:break-word;}
+  .sx-goal.achieved{text-decoration:line-through;opacity:.7;}
+  .sx-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .sx-chip{font-size:11px;background:var(--panel-3);border:1px solid var(--line);border-radius:12px;padding:3px 8px;color:var(--ink);}
+  .sx-actions{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap;}
+  .sx-link{background:none;border:none;color:var(--accent);font-size:12px;cursor:pointer;padding:4px 2px;font-family:'Inter',sans-serif;}
+  .sx-detail{display:none;margin-top:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2);padding:4px 10px;}
+  .sx-detail.open{display:block;}
+  .sx-row{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px;}
+  .sx-row:last-child{border-bottom:none;}
+  .sx-row .k{flex:0 0 118px;color:var(--muted);}
+  .sx-row .v{flex:1;word-break:break-word;}
+  .add-session-btn{display:block;width:calc(100% - 12px);margin:10px 6px 8px;background:none;border:1px dashed var(--accent);
+    color:var(--accent);border-radius:8px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
+  #sessionFormOverlay .edit-modal{max-height:90vh;overflow-y:auto;}
+  .sx-cmp{margin-top:6px;}
+  .sx-cmp-h,.sx-cmp-r{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:6px;padding:7px 0;font-size:12.5px;}
+  .sx-cmp-h{font-weight:700;font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--line);}
+  .sx-cmp-r{border-bottom:1px solid var(--line);}
+  .sx-cmp-h>div:not(:first-child),.sx-cmp-r>div:not(:first-child){text-align:right;}
+  .sx-cmp-r .k{color:var(--muted);}
+  .sx-cmp-r .good{color:#146C43;font-weight:600;} .sx-cmp-r .mid{color:#8A6A00;font-weight:600;} .sx-cmp-r .bad{color:#A32E21;font-weight:600;}
+  .sx-score{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:10px 0 6px;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:700;}
+  .sx-score small{font-weight:500;font-size:11.5px;}
+  .sx-score.good{background:#E1F6E8;color:#146C43;} .sx-score.mid{background:#FFF6DB;color:#8A6A00;} .sx-score.bad{background:#FDECEA;color:#A32E21;} .sx-score.none{background:var(--panel-3);color:var(--muted);font-weight:500;}
+  .sx-avg{margin:8px 6px 0;padding:9px 12px;border-radius:10px;font-size:12.5px;font-weight:600;background:var(--panel-3);}
+  .sf-cmp{display:grid;grid-template-columns:78px 1fr 1fr;gap:4px 8px;align-items:center;margin-bottom:6px;}
+  .sf-cmp .h{font-size:11.5px;font-weight:700;color:var(--muted);}
+  .sf-cmp .h.c{text-align:center;} .sf-cmp .rowk{font-size:12px;color:var(--ink);}
+  .sx-status{appearance:none;-webkit-appearance:none;font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:12px;
+    border:1px solid var(--line);font-family:'Inter',sans-serif;cursor:pointer;text-align:center;}
+  span.sx-status{display:inline-block;cursor:default;}
+  .st-belum{background:#EEF1EF;border-color:#D3DAD5;color:#5E7A69;}
+  .st-rencana{background:#E5EFFB;border-color:#B7CFEE;color:#2B5C9E;}
+  .st-berlangsung{background:#FFF0DB;border-color:#EBC890;color:#9A5200;}
+  .st-selesai{background:#E1F6E8;border-color:#A9DDBC;color:#146C43;}
+  .st-batal{background:#FDECEA;border-color:#F3B8B1;color:#A32E21;}
+  .edit-modal select{width:100%;background:var(--panel-3);border:1px solid var(--line);color:var(--ink);border-radius:4px;
+    padding:9px 10px;font-size:13px;font-family:'Inter',sans-serif;margin-bottom:10px;}
+  .sf-lab{display:block;font-size:11.5px;color:var(--muted);margin:2px 0 4px;font-weight:600;}
+  .sf-row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:end;}
+  #sessionFormOverlay input,#sessionFormOverlay select{height:40px;margin-top:0;margin-bottom:10px;}
+  .sf-cmp input{margin-bottom:0 !important;height:38px !important;padding:6px 8px;text-align:center;}
+  #sessionFormOverlay textarea{margin-top:0;}
+
+  /* --- Profil Atlet --- */
+  .ap-item{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px;cursor:pointer;}
+  .ap-item:active{transform:scale(.99);}
+  .ap-avatar{flex:none;width:42px;height:42px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-family:'Oswald',sans-serif;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:15px;}
+  .ap-avatar.big{width:56px;height:56px;font-size:20px;}
+  .ap-name{font-weight:600;font-size:14px;}
+  .ap-overlay{position:fixed;inset:0;background:var(--bg);z-index:60;overflow-y:auto;display:none;-webkit-overflow-scrolling:touch;}
+  .ap-wrap{max-width:520px;margin:0 auto;padding:0 14px 40px;}
+  .ap-top{display:flex;align-items:center;gap:12px;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:2;margin-bottom:6px;}
+  .ap-toptitle{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;}
+  .ap-status{margin-top:12px;padding:9px 12px;border-radius:10px;font-size:12.5px;font-weight:600;background:var(--panel-3);color:var(--muted);}
+  .ap-status.red{background:#FDECEA;color:#A32E21;} .ap-status.yellow{background:#FFF6DB;color:#8A6A00;} .ap-status.green{background:#E1F6E8;color:#146C43;}
+  #athleteProfileOverlay select{width:100%;background:var(--panel-3);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:13.5px;font-family:'Inter',sans-serif;margin-bottom:10px;}
+  #athleteProfileOverlay input,#athleteProfileOverlay textarea{width:100%;background:var(--panel-3);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:13.5px;font-family:'Inter',sans-serif;margin-bottom:10px;}
   #profileForm{margin-top:16px;}
 
   /* --- app shell --- */
@@ -711,6 +794,43 @@
       </div>
     </div>
 
+    <div id="athleteProfileOverlay" class="ap-overlay"><div id="athleteProfileBody"></div></div>
+
+    <div id="sessionFormOverlay" class="edit-overlay" style="display:none">
+      <div class="edit-modal">
+        <div class="section-title" id="sfTitle">Pertemuan 01</div>
+        <div class="section-sub" style="text-align:left;" id="sfSub">Isi detail pertemuan latihan.</div>
+        <label class="sf-lab" for="sfStatus">Status pertemuan</label>
+        <select id="sfStatus"><option value="belum">Belum dimulai</option><option value="rencana">Direncanakan</option><option value="berlangsung">Sedang berlangsung</option><option value="selesai">Selesai</option><option value="batal">Tidak terlaksana</option></select>
+        <label class="sf-lab" for="sfDate">Tanggal</label>
+        <input type="date" id="sfDate">
+        <label class="sf-lab" for="sfGoal">Tujuan latihan *</label>
+        <input type="text" id="sfGoal" maxlength="140" placeholder="mis. Meningkatkan VO2max dasar">
+        <label class="sf-lab" for="sfType">Jenis latihan</label>
+        <input type="text" id="sfType" maxlength="60" list="sfTypeList" placeholder="mis. Lari kontinu zona 2">
+        <datalist id="sfTypeList"><option value="Lari kontinu"><option value="Interval"><option value="Fartlek"><option value="Tempo run"><option value="Circuit training"><option value="Kekuatan"><option value="Kecepatan"><option value="Kelincahan"><option value="Teknik"><option value="Pemulihan aktif"></datalist>
+        <label class="sf-lab" style="margin-top:6px;">Rencana vs Realisasi</label>
+        <div class="sf-cmp">
+          <div class="h"></div><div class="h c">Rencana</div><div class="h c">Realisasi</div>
+          <div class="rowk">Durasi (mnt)</div><input type="number" id="sfDuration" min="0" inputmode="numeric" placeholder="60"><input type="number" id="sfADuration" min="0" inputmode="numeric" placeholder="55">
+          <div class="rowk">Volume</div><input type="text" id="sfVolume" maxlength="40" placeholder="6 × 400 m"><input type="text" id="sfAVolume" maxlength="40" placeholder="5 × 400 m">
+          <div class="rowk">Intensitas (%)</div><input type="number" id="sfIntensity" min="0" max="100" inputmode="numeric" placeholder="80"><input type="number" id="sfAIntensity" min="0" max="100" inputmode="numeric" placeholder="75">
+          <div class="rowk">RPE (1–10)</div><input type="number" id="sfRpe" min="1" max="10" inputmode="numeric" placeholder="6"><input type="number" id="sfARpe" min="1" max="10" inputmode="numeric" placeholder="8">
+          <div class="rowk" id="sfPresentLab">Kehadiran</div><input type="number" id="sfExpected" min="0" inputmode="numeric" placeholder="20"><input type="number" id="sfPresent" min="0" inputmode="numeric" placeholder="17">
+        </div>
+        <div class="section-sub" style="text-align:left;margin:0 0 10px;">Volume: tulis dengan angka (mis. 6 × 400 m). Angka dikalikan untuk menghitung kesesuaian. Kehadiran rencana kosong = semua atlet.</div>
+        <label class="sf-lab" for="sfFrequency">Frekuensi</label>
+        <input type="text" id="sfFrequency" maxlength="40" placeholder="mis. 3×/minggu">
+        <label class="sf-lab" for="sfNote">Catatan coach</label>
+        <textarea id="sfNote" rows="3" maxlength="400" placeholder="Evaluasi, kondisi atlet, hal yang perlu diperbaiki..."></textarea>
+        <div id="sfError" class="auth-error" style="display:none"></div>
+        <div class="edit-modal-actions">
+          <button type="button" id="sfCancel" class="edit-cancel-btn">Batal</button>
+          <button type="button" id="sfSave" class="btn-primary" style="width:auto;">Simpan</button>
+        </div>
+      </div>
+    </div>
+
     <div id="editPhaseOverlay" class="edit-overlay" style="display:none">
       <div class="edit-modal">
         <div class="section-title">Edit Info Fase</div>
@@ -741,6 +861,7 @@ Daya tahan: Aerobik → lanjutan"></textarea>
 
     <div class="tabs">
       <button class="tab-btn" data-tab="dashboard" id="dashboardTabBtn" style="display:none">Dashboard</button>
+      <button class="tab-btn" data-tab="athletes" id="athletesTabBtn" style="display:none">Atlet</button>
       <button class="tab-btn active" data-tab="tasks">Tugas</button>
       <button class="tab-btn" data-tab="program">Program Latihan</button>
     </div>
@@ -750,6 +871,13 @@ Daya tahan: Aerobik → lanjutan"></textarea>
         <div class="section-title" id="dashGreeting">Selamat datang</div>
         <div class="section-sub">Pantau progres. Bangun performa. Raih prestasi.</div>
         <div class="quote-banner" id="coachQuoteBanner"></div>
+      </div>
+
+      <div class="section-card" id="todayCard">
+        <div class="section-title">📊 Kondisi Program Hari Ini</div>
+        <div class="section-sub" id="todayDate"></div>
+        <div class="today-status" id="todayStatus"></div>
+        <div class="today-grid" id="todayGrid"></div>
       </div>
 
       <div class="section-card" id="dashJoinCodeCard" style="display:none;">
@@ -776,7 +904,7 @@ Daya tahan: Aerobik → lanjutan"></textarea>
 
       <div class="section-card">
         <div class="section-title">⚠️ Atlet Perlu Perhatian</div>
-        <div class="section-sub">Diurutkan dari tingkat penyelesaian tugas paling rendah.</div>
+        <div class="section-sub">Atlet dengan tugas terlambat (🔴) atau beban latihan terlalu tinggi (🟡).</div>
         <div id="dashAttention"></div>
       </div>
     </div>
@@ -789,6 +917,11 @@ Daya tahan: Aerobik → lanjutan"></textarea>
           <button id="dashDetailClose" class="edit-cancel-btn">Tutup</button>
         </div>
       </div>
+    </div>
+
+    <div class="tab-panel" id="tab-athletes">
+      <div class="search-wrap"><input type="text" id="athleteSearch" placeholder="🔍 Cari atlet atau cabang..."></div>
+      <div id="athleteTabList"><div class="empty-msg">Memuat...</div></div>
     </div>
 
     <div class="tab-panel active" id="tab-tasks">
@@ -1296,7 +1429,7 @@ document.getElementById('dupProgramConfirm').addEventListener('click', async ()=
   const targetPhaseId = document.getElementById('dupProgramTargetPhase').value;
   const pr = programsCache.find(p=>p.id===progid);
   if(!pr || !targetPhaseId) return;
-  const newSessions = (pr.sessions||[]).map(s=>({ id: uid(), target: s.target, achieved: false, date: '', note: '' }));
+  const newSessions = (pr.sessions||[]).map(s=>({ id: uid(), target: s.target, type: s.type||'', duration: sessionHas(s.duration)?s.duration:'', volume: s.volume||'', intensity: s.intensity||'', frequency: s.frequency||'', rpe: sessionHas(s.rpe)?s.rpe:'', expected: sessionHas(s.expected)?s.expected:'', aDuration:'', aVolume:'', aIntensity:'', aRpe:'', present: '', status: 'belum', achieved: false, date: '', note: '' }));
   try{
     await dbf.collection('programs').add({
       phaseId: targetPhaseId, name: pr.name, sessions: newSessions, coachUid: currentUser.uid
@@ -1789,6 +1922,7 @@ function showApp(){
   document.getElementById('weeklyFormWrap').style.display = isCoach ? 'flex' : 'none';
   const dashBtn = document.getElementById('dashboardTabBtn');
   dashBtn.style.display = isCoach ? '' : 'none';
+  document.getElementById('athletesTabBtn').style.display = isCoach ? '' : 'none';
   if(isCoach){
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
@@ -1955,9 +2089,9 @@ function renderAthleteList(){
     const bodyLine = [a.age?a.age+' th':null, a.gender||null, a.height?a.height+' cm':null, a.weight?a.weight+' kg':null, a.weightClass||null].filter(Boolean).join(' · ') || '-';
     const addressLine = [a.village, a.district, a.regency, a.province].filter(Boolean).join(', ');
     return `
-    <div class="athlete-card">
+    <div class="athlete-card" data-uid="${a.uid}" style="cursor:pointer;">
       <div>
-        <div>${escapeHtml(a.name || a.email)}</div>
+        <div>${escapeHtml(a.name || a.email)} <span style="color:var(--accent);font-size:11.5px;">· Lihat profil ›</span></div>
         <div class="athlete-meta">🏅 ${escapeHtml(sportLabel)}</div>
         <div class="athlete-meta">${escapeHtml(bodyLine)}</div>
         ${addressLine ? '<div class="athlete-meta">📍 '+escapeHtml(addressLine)+'</div>' : ''}
@@ -1971,7 +2105,7 @@ function renderAthleteList(){
 
 document.getElementById('athleteList').addEventListener('click', async (e)=>{
   const el = e.target.closest('[data-action="removeathlete"]');
-  if(!el) return;
+  if(!el){ const card = e.target.closest('.athlete-card'); if(card) openAthleteProfile(card.dataset.uid); return; }
   const uid = el.dataset.uid;
   const name = el.dataset.name;
   if(!confirm('Hapus '+name+' dari daftar atletmu?\n\nAtlet ini akan diminta memilih pelatih lagi saat login berikutnya, dan tidak lagi bisa melihat program/tugas dari kamu.')) return;
@@ -2547,7 +2681,480 @@ function renderDashboard(){
         }).join('')
       : '<div class="empty-msg">Belum ada atlet dengan progres 60%+ tugas selesai.</div>';
   }
+  try{ renderToday(); renderAthleteTab(); }catch(err){ console.error('renderToday gagal:', err); }
 }
+
+/* ---------------- Dashboard: Kondisi Program Hari Ini ---------------- */
+function isoLocal(d){ const p=n=>String(n).padStart(2,'0'); return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate()); }
+function daysBetweenISO(a,b){ return Math.round((new Date(b+'T00:00:00')-new Date(a+'T00:00:00'))/86400000); }
+function relDayLabel(iso, today){ const d=daysBetweenISO(today, iso); return d===0?'Hari ini':d===1?'Besok':d+' hari lagi'; }
+const TEST_LOWER_RE = /(sprint|lari|detik|waktu|time|shuttle|agility|kelincahan|reaksi|reaction)/i;
+const TEST_HIGHER_RE = /(cooper|beep|bleep|vo2|jarak|distance|jumlah|repetisi|rep\b|push|sit.?up|pull|jump|lompat|loncat|angkat|bench|squat|deadlift|kg)/i;
+function isLowerBetterTest(name, komponen){
+  const txt = (name||'')+' '+(komponen||'');
+  return TEST_LOWER_RE.test(txt) && !TEST_HIGHER_RE.test(txt);
+}
+
+function computeTodayStatus(){
+  const DAY = 86400000, now = Date.now(), today = isoLocal(new Date());
+  const wk = new Date(); wk.setHours(0,0,0,0);
+  const weekStart = wk.getTime() - ((wk.getDay()+6)%7)*DAY; // Senin 00:00
+  const stat = {};
+  athletesCache.forEach(a=>{
+    stat[a.uid] = { uid:a.uid, name:a.name||a.email||'Atlet', total:0, done:0, overdue:0, lastDone:0,
+      doneWeek:0, rpe7:[], load7:0, load21:0, level:'none', reasons:[], high:false, avgRpe:null, rate:null };
+  });
+  const overdueTaskIds = new Set();
+  let nextTask = null;
+  tasksCache.forEach(t=>{
+    const relevant = t.assignedTo==='all' ? athletesCache : athletesCache.filter(a=>a.uid===t.assignedTo);
+    const comps = taskCompletionsCache[t.id] || {};
+    let pending = 0;
+    relevant.forEach(a=>{
+      const s = stat[a.uid]; if(!s) return;
+      const c = comps[a.uid]; const done = !!(c && c.done);
+      s.total++;
+      if(done){
+        s.done++;
+        const ts = c.completedAt || 0;
+        if(ts > s.lastDone) s.lastDone = ts;
+        if(ts >= weekStart) s.doneWeek++;
+        if(ts >= now-7*DAY){ if(c.rpe) s.rpe7.push(c.rpe); s.load7 += (c.load||0); }
+        else if(ts >= now-28*DAY){ s.load21 += (c.load||0); }
+      }else{
+        pending++;
+        if(t.dueDate && t.dueDate < today){ s.overdue++; overdueTaskIds.add(t.id); }
+      }
+    });
+    if(t.dueDate && t.dueDate >= today && pending>0){
+      if(!nextTask || t.dueDate < nextTask.task.dueDate) nextTask = { task:t, pending, total:relevant.length };
+    }
+  });
+
+  Object.values(stat).forEach(s=>{
+    s.rate = s.total ? Math.round(s.done/s.total*100) : null;
+    s.avgRpe = s.rpe7.length ? s.rpe7.reduce((x,y)=>x+y,0)/s.rpe7.length : null;
+    const rpeHigh = s.avgRpe!==null && s.rpe7.length>=2 && s.avgRpe>=8;
+    const chronicWeekly = s.load21/3;
+    const loadSpike = chronicWeekly>0 && s.load7 > chronicWeekly*1.5;
+    s.high = rpeHigh || loadSpike;
+    if(s.overdue>0){ s.level='red'; s.reasons.push(s.overdue+' tugas terlambat'); }
+    if(s.high){
+      if(s.level!=='red') s.level='yellow';
+      s.reasons.push(rpeHigh ? 'RPE rata-rata '+s.avgRpe.toFixed(1)+'/10 (7 hari)' : 'Beban naik >50% dari biasanya');
+    }
+    if(s.level==='none' && s.total>0) s.level='green';
+  });
+  const list = Object.values(stat);
+
+  // Progress fisik: bandingkan tes pertama vs terakhir per atlet per jenis tes
+  const groups = {};
+  testsCache.forEach(t=>{
+    if(!t.athleteUid) return;
+    const v = parseFloat(String(t.result).replace(',','.'));
+    if(isNaN(v)) return;
+    const ts = t.date ? new Date(t.date+'T00:00:00').getTime() : (t.createdAt||0);
+    const k = t.athleteUid+'||'+String(t.name||'').toLowerCase();
+    (groups[k] = groups[k] || []).push({ v, ts, t });
+  });
+  let fitUp=0, fitDown=0, fitSame=0; const fitRows=[];
+  Object.values(groups).forEach(arr=>{
+    if(arr.length<2) return;
+    arr.sort((x,y)=>x.ts-y.ts);
+    const f=arr[0], l=arr[arr.length-1];
+    const lower = isLowerBetterTest(l.t.name, l.t.komponen);
+    const diff = l.v - f.v, better = lower ? -diff : diff;
+    const dir = Math.abs(diff)<1e-9 ? 0 : (better>0 ? 1 : -1);
+    if(dir>0) fitUp++; else if(dir<0) fitDown++; else fitSame++;
+    const who = (stat[l.t.athleteUid] && stat[l.t.athleteUid].name) || l.t.athleteName || 'Atlet';
+    fitRows.push({ who, test:l.t.name||'-', first:f.v, last:l.v, dir });
+  });
+
+  // Data dari pertemuan program (tanggal, hadir, tercapai)
+  const wsISO = isoLocal(new Date(weekStart)), weISO = isoLocal(new Date(weekStart+6*DAY));
+  let sesNext=null, sesNow=null, weekPresent=0, weekSlots=0, weekSessions=0; const sesOverdue=[];
+  const sesScores = [];
+  programsCache.forEach(pr=>(pr.sessions||[]).forEach((se,i)=>{
+    const cmpS = sessionCompare(se);
+    if(cmpS.total!==null) sesScores.push({ label: sessionNo(i)+' · '+pr.name, total: cmpS.total });
+    if(!se.date) return;
+    const item = { s:se, pr, label: sessionNo(i)+' · '+pr.name };
+    const open = sessionIsOpen(se);
+    if(sessionStatus(se)==='berlangsung' && !sesNow) sesNow = item;
+    if(open && se.date < today) sesOverdue.push(item);
+    if(open && se.date >= today && (!sesNext || se.date < sesNext.s.date)) sesNext = item;
+    if(se.date >= wsISO && se.date <= weISO && sessionHas(se.present)){
+      weekPresent += Number(se.present)||0; weekSlots += (sessionHas(se.expected) ? Number(se.expected) : athletesCache.length); weekSessions++;
+    }
+  }));
+  let progTotal=0, progDone=0;
+  PHASES.forEach(p=>{ const c=phaseCounts(p.id); progTotal+=c.total; progDone+=c.achieved; });
+
+  return { sesScores, sesNext, sesNow, sesOverdue, weekPresent, weekSlots, weekSessions, now, today, DAY, list, overdueTaskIds, nextTask, fitUp, fitDown, fitSame, fitRows, progTotal, progDone };
+}
+
+function renderToday(){
+  const card = document.getElementById('todayCard');
+  if(!card) return;
+  const D = computeTodayStatus();
+  window._today = D;
+  const { list, today } = D;
+  const n = list.length;
+  const red = list.filter(s=>s.level==='red'), yellow = list.filter(s=>s.level==='yellow'), green = list.filter(s=>s.level==='green');
+  const attention = list.filter(s=>s.reasons.length)
+    .sort((a,b)=> (b.level==='red')-(a.level==='red') || b.reasons.length-a.reasons.length);
+
+  const hasTasks = tasksCache.length>0;
+  const active = list.filter(s=>s.lastDone >= D.now-14*D.DAY).length;
+  const attended = list.filter(s=>s.doneWeek>0).length;
+  const useSes = D.weekSessions>0 && D.weekSlots>0;
+  const attendPct = useSes ? Math.min(100, Math.round(D.weekPresent/D.weekSlots*100)) : (n ? Math.round(attended/n*100) : 0);
+  const attendCap = useSes ? (D.weekSessions+' pertemuan minggu ini') : (attended+'/'+n+' atlet berlatih');
+  const lateTotal = D.overdueTaskIds.size + D.sesOverdue.length;
+  const progPct = D.progTotal ? Math.round(D.progDone/D.progTotal*100) : 0;
+  const fitPairs = D.fitUp + D.fitDown + D.fitSame;
+  const fitAvg = D.sesScores.length ? Math.round(D.sesScores.reduce((x,y)=>x+y.total,0)/D.sesScores.length) : 0;
+  const fitBad = D.sesScores.filter(x=>x.total<75).length;
+
+  const dl = new Date().toLocaleDateString('id-ID',{ weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  document.getElementById('todayDate').textContent = dl;
+
+  document.getElementById('todayStatus').innerHTML = `
+    <div class="tl-card tl-red" data-today="red"><div class="tl-num">${lateTotal}</div><div class="tl-label">🔴 Program terlambat</div><div class="tl-cap">${D.sesOverdue.length} pertemuan · ${D.overdueTaskIds.size} tugas</div></div>
+    <div class="tl-card tl-yellow" data-today="yellow"><div class="tl-num">${yellow.length}</div><div class="tl-label">🟡 Beban terlalu tinggi</div><div class="tl-cap">atlet</div></div>
+    <div class="tl-card tl-green" data-today="green"><div class="tl-num">${green.length}</div><div class="tl-label">🟢 Sesuai target</div><div class="tl-cap">dari ${n} atlet</div></div>`;
+
+  let nextHtml;
+  const sn = D.sesNow || D.sesNext;
+  if(sn && (D.sesNow || !D.nextTask || sn.s.date <= D.nextTask.task.dueDate)){
+    nextHtml = `<div class="dash-num" style="font-size:18px;line-height:1.2;">${escapeHtml(sn.label)}</div>
+      <div class="dash-label">${D.sesNow ? '▶ Sedang berlangsung' : escapeHtml(relDayLabel(sn.s.date, today))} · ${escapeHtml(formatDateShort(sn.s.date)||sn.s.date)}${sn.s.duration?' · '+sn.s.duration+' mnt':''}</div>
+      <div class="dash-caption">${escapeHtml(sn.s.target||'')}${sn.s.type?' · '+escapeHtml(sn.s.type):''}</div>`;
+  }else if(D.nextTask){
+    const t = D.nextTask.task;
+    const target = t.assignedTo==='all' ? 'Semua atlet' : (athletesCache.find(a=>a.uid===t.assignedTo)?.name || 'Atlet');
+    nextHtml = `<div class="dash-num" style="font-size:18px;line-height:1.2;">${escapeHtml(t.title)}</div>
+      <div class="dash-label">${escapeHtml(relDayLabel(t.dueDate, today))} · ${escapeHtml(formatDateShort(t.dueDate)||t.dueDate)}${t.duration?' · '+t.duration+' mnt':''}</div>
+      <div class="dash-caption">${escapeHtml(target)} · ${D.nextTask.pending} belum selesai</div>`;
+  }else{
+    nextHtml = `<div class="dash-num" style="font-size:16px;color:var(--muted);">Belum terjadwal</div>
+      <div class="dash-label">Buat tugas dengan tenggat untuk mengisi jadwal.</div>`;
+  }
+
+  document.getElementById('todayGrid').innerHTML = `
+    <div class="dash-card dash-card-click" data-today="active"><div class="dash-num">${hasTasks ? active : n}<span class="today-of">/${n}</span></div><div class="dash-label">👥 Atlet aktif</div><div class="dash-caption">${hasTasks ? 'Berlatih 14 hari terakhir' : 'Terdaftar'}</div></div>
+    <div class="dash-card dash-card-click" data-today="attendance"><div class="dash-num">${attendPct}%</div><div class="dash-label">✅ Kehadiran minggu ini</div><div class="dash-caption">${attendCap}</div></div>
+    <div class="dash-card dash-card-click" data-today="programs"><div class="dash-num">${D.progDone}<span class="today-of">/${D.progTotal}</span></div><div class="dash-label">🏋️ Program terlaksana</div><div class="dash-caption">${progPct}% dari rencana</div></div>
+    <div class="dash-card dash-card-click" data-today="fit" style="grid-column:1 / -1;"><div class="dash-num ${D.sesScores.length ? (fitAvg>=90?'':'warn') : ''}">${D.sesScores.length ? fitAvg+'%' : '-'}</div><div class="dash-label">📊 Kesesuaian program (realisasi vs rencana)</div><div class="dash-caption">${D.sesScores.length ? D.sesScores.length+' pertemuan dinilai · '+fitBad+' perlu evaluasi' : 'Isi rencana & realisasi di pertemuan'}</div></div>
+    <div class="dash-card dash-card-click" data-today="fitness"><div class="dash-num">${fitPairs ? '↑'+D.fitUp+' ↓'+D.fitDown : '-'}</div><div class="dash-label">📈 Progress fisik</div><div class="dash-caption">${fitPairs ? fitPairs+' tes berulang' : 'Belum ada tes berulang'}</div></div>
+    <div class="dash-card dash-card-click" data-today="next" style="grid-column:1 / -1;"><div class="dash-caption" style="margin:0 0 6px;">📅 Latihan berikutnya</div>${nextHtml}</div>
+    <div class="dash-card dash-card-click ${attention.length?'today-warn':''}" data-today="attention" style="grid-column:1 / -1;"><div class="dash-num ${attention.length?'warn':''}">${attention.length}</div><div class="dash-label">⚠️ Atlet perlu perhatian</div><div class="dash-caption">${attention.length ? 'Ketuk untuk lihat alasannya' : 'Semua atlet aman'}</div></div>`;
+
+  // Daftar atlet perlu perhatian (menggantikan daftar lama berdasar % tugas)
+  const attEl = document.getElementById('dashAttention');
+  if(attEl){
+    attEl.innerHTML = attention.length
+      ? attention.map(s=>`<div class="attn-row"><span class="attn-name">${s.level==='red'?'🔴':'🟡'} ${escapeHtml(s.name)}</span><span class="attn-pct" style="text-align:right;">${s.reasons.map(escapeHtml).join(' · ')}</span></div>`).join('')
+      : '<div class="empty-msg">Tidak ada atlet dengan tugas terlambat atau beban berlebih saat ini.</div>';
+  }
+}
+
+function openTodayDetail(type){
+  const D = window._today; if(!D) return;
+  const titleEl = document.getElementById('dashDetailTitle');
+  const contentEl = document.getElementById('dashDetailContent');
+  const row = (l,r)=>`<div class="attn-row"><span class="attn-name">${l}</span><span class="attn-pct" style="text-align:right;color:var(--muted);">${r}</span></div>`;
+  const empty = (m)=>`<div class="empty-msg">${m}</div>`;
+  const { list, today } = D;
+  let html = '';
+  if(type==='red'){
+    titleEl.textContent = '🔴 Program Terlambat';
+    const items = list.filter(s=>s.level==='red');
+    html = items.length ? items.map(s=>row(escapeHtml(s.name), s.overdue+' tugas terlambat')).join('') : (D.sesOverdue.length ? '' : empty('Tidak ada tugas atau pertemuan yang terlambat. 👍'));
+    if(D.sesOverdue.length) html += '<div class="section-sub" style="margin-top:12px;">Pertemuan melewati tanggal tapi belum selesai:</div>' + D.sesOverdue.map(o=>row(escapeHtml(o.label), escapeHtml(formatDateShort(o.s.date)||o.s.date))).join('');
+    const late = tasksCache.filter(t=>D.overdueTaskIds.has(t.id));
+    if(late.length) html += '<div class="section-sub" style="margin-top:12px;">Tugas melewati tenggat:</div>' + late.map(t=>row(escapeHtml(t.title), 'Tenggat '+escapeHtml(formatDateShort(t.dueDate)||t.dueDate))).join('');
+  }else if(type==='yellow'){
+    titleEl.textContent = '🟡 Beban Latihan Terlalu Tinggi';
+    const items = list.filter(s=>s.high);
+    html = items.length ? items.map(s=>row(escapeHtml(s.name), s.reasons.filter(r=>/RPE|Beban/.test(r)).map(escapeHtml).join(' · '))).join('') : empty('Tidak ada atlet dengan beban berlebih.');
+    html += '<div class="section-sub" style="margin-top:12px;">Ditandai jika RPE rata-rata 7 hari terakhir ≥ 8 (min. 2 sesi) atau total beban (RPE × durasi) minggu ini naik lebih dari 50% dibanding rata-rata 3 minggu sebelumnya.</div>';
+  }else if(type==='green'){
+    titleEl.textContent = '🟢 Program Sesuai Target';
+    const items = list.filter(s=>s.level==='green');
+    html = items.length ? items.map(s=>row(escapeHtml(s.name), s.rate+'% tugas selesai')).join('') : empty('Belum ada atlet yang berstatus sesuai target.');
+    html += '<div class="section-sub" style="margin-top:12px;">Sesuai target = punya tugas, tidak ada yang terlambat, dan beban latihan wajar.</div>';
+  }else if(type==='active'){
+    titleEl.textContent = '👥 Atlet Aktif';
+    html = list.length ? list.map(s=>{
+      const days = s.lastDone ? Math.floor((D.now-s.lastDone)/D.DAY) : null;
+      return row(escapeHtml(s.name), days===null ? 'Belum ada tugas selesai' : (days===0 ? 'Berlatih hari ini' : days+' hari lalu'));
+    }).join('') : empty('Belum ada atlet terdaftar.');
+    html += '<div class="section-sub" style="margin-top:12px;">Aktif = menyelesaikan minimal 1 tugas dalam 14 hari terakhir.</div>';
+  }else if(type==='attendance'){
+    titleEl.textContent = '✅ Kehadiran Minggu Ini';
+    html = list.length ? list.map(s=>row(escapeHtml(s.name), s.doneWeek>0 ? '✅ '+s.doneWeek+' latihan' : '— belum')).join('') : empty('Belum ada atlet terdaftar.');
+    html += '<div class="section-sub" style="margin-top:12px;">'+(D.weekSessions>0 ? 'Angka utama memakai "Jumlah atlet hadir" dari '+D.weekSessions+' pertemuan minggu ini. Daftar di atas = tugas yang diselesaikan sejak Senin.' : 'Dihitung dari tugas yang diselesaikan atlet sejak Senin. Isi "Jumlah atlet hadir" di pertemuan program supaya kehadiran dihitung dari pertemuan.')+'</div>';
+  }else if(type==='programs'){
+    titleEl.textContent = '🏋️ Program Terlaksana';
+    html = PHASES.map(p=>{ const c=phaseCounts(p.id); return row(escapeHtml(p.name||p.id), c.achieved+'/'+c.total+' sesi'); }).join('') || empty('Belum ada program.');
+    html += '<div class="section-sub" style="margin-top:12px;">Sesi yang ditandai tercapai dibanding total sesi yang direncanakan di tab Program Latihan.</div>';
+  }else if(type==='fit'){
+    titleEl.textContent = '📊 Kesesuaian Program';
+    const sorted = D.sesScores.slice().sort((a,b)=>a.total-b.total);
+    html = sorted.length ? sorted.map(r=>row(escapeHtml(r.label), (r.total>=90?'🟢':r.total>=75?'🟡':'🔴')+' '+r.total+'%')).join('') : empty('Belum ada pertemuan yang punya rencana dan realisasi.');
+    html += '<div class="section-sub" style="margin-top:12px;">Rata-rata kecocokan Durasi, Volume, Intensitas, RPE, dan Kehadiran antara rencana dan realisasi. Selisih ke atas maupun ke bawah sama-sama mengurangi nilai. 90%+ sesuai, 75–89% cukup, di bawah 75% perlu evaluasi.</div>';
+  }else if(type==='fitness'){
+    titleEl.textContent = '📈 Progress Fisik';
+    html = D.fitRows.length ? D.fitRows.map(r=>row(escapeHtml(r.who)+' · '+escapeHtml(r.test), (r.dir>0?'🟢 membaik':r.dir<0?'🔴 menurun':'⚪ tetap')+' ('+r.first+' → '+r.last+')')).join('') : empty('Belum ada atlet dengan tes yang diulang. Catat hasil tes di tab Program Latihan.');
+    html += '<div class="section-sub" style="margin-top:12px;">Membandingkan hasil tes pertama dan terakhir tiap atlet. Tes bernama lari/sprint/waktu dianggap makin kecil makin baik.</div>';
+  }else if(type==='next'){
+    titleEl.textContent = '📅 Jadwal Mendatang';
+    const up = tasksCache.filter(t=>t.dueDate && t.dueDate>=today).sort((a,b)=>a.dueDate.localeCompare(b.dueDate)).slice(0,8);
+    html = up.length ? up.map(t=>row(escapeHtml(t.title), escapeHtml(relDayLabel(t.dueDate,today))+' · '+escapeHtml(formatDateShort(t.dueDate)||t.dueDate))).join('') : empty('Belum ada tugas dengan tenggat mendatang.');
+  }else if(type==='attention'){
+    titleEl.textContent = '⚠️ Atlet Perlu Perhatian';
+    const items = list.filter(s=>s.reasons.length);
+    html = items.length ? items.map(s=>row((s.level==='red'?'🔴 ':'🟡 ')+escapeHtml(s.name), s.reasons.map(escapeHtml).join(' · '))).join('') : empty('Semua atlet aman. 👍');
+  }
+  contentEl.innerHTML = html;
+  document.getElementById('dashDetailOverlay').style.display = 'flex';
+}
+document.addEventListener('click', (e)=>{
+  const el = e.target.closest('#todayCard [data-today]');
+  if(el) openTodayDetail(el.dataset.today);
+});
+
+/* ---------------- Profil Atlet ---------------- */
+const FIT_CONDITIONS = ['Prima','Baik','Cukup','Lelah','Cedera / pemulihan'];
+let openAthleteUid = null;
+function apInitials(n){ return String(n||'?').trim().split(/\s+/).slice(0,2).map(w=>w[0]||'').join('').toUpperCase() || '?'; }
+function apAvg(arr){ return arr.length ? arr.reduce((x,y)=>x+y,0)/arr.length : null; }
+function apDate(ts){ return ts ? (formatDateShort(isoLocal(new Date(ts))) || '') : ''; }
+
+function athleteData(a){
+  const DAY = 86400000, now = Date.now();
+  const rows = [];
+  tasksCache.forEach(t=>{
+    if(!(t.assignedTo==='all' || t.assignedTo===a.uid)) return;
+    const c = (taskCompletionsCache[t.id]||{})[a.uid];
+    rows.push({ t, c, done: !!(c && c.done) });
+  });
+  const done = rows.filter(r=>r.done).sort((x,y)=>(y.c.completedAt||0)-(x.c.completedAt||0));
+  const rate = rows.length ? Math.round(done.length/rows.length*100) : null;
+  const d0 = new Date(); d0.setHours(0,0,0,0);
+  const wk0 = d0.getTime() - ((d0.getDay()+6)%7)*DAY;
+  const weeks = [];
+  for(let i=5;i>=0;i--){ const st = wk0 - i*7*DAY; weeks.push({ st, en: st+7*DAY, n:0 }); }
+  done.forEach(r=>{ const ts = r.c.completedAt||0; const w = weeks.find(w=>ts>=w.st && ts<w.en); if(w) w.n++; });
+  const withRpe = done.filter(r=>r.c.rpe);
+  const rpe7 = withRpe.filter(r=>(r.c.completedAt||0) >= now-7*DAY).map(r=>r.c.rpe);
+  const rpe28 = withRpe.filter(r=>(r.c.completedAt||0) >= now-28*DAY).map(r=>r.c.rpe);
+
+  const groups = {};
+  testsCache.filter(t=>t.athleteUid===a.uid).forEach(t=>{
+    const k = String(t.name||'-').toLowerCase();
+    (groups[k] = groups[k] || { name:t.name||'-', komponen:t.komponen, items:[] }).items.push(t);
+  });
+  let up=0, down=0;
+  const testGroups = Object.values(groups).map(g=>{
+    g.items.sort((x,y)=>(x.date||'').localeCompare(y.date||'') || (x.createdAt||0)-(y.createdAt||0));
+    const nums = g.items.map(i=>parseFloat(String(i.result).replace(',','.'))).filter(v=>!isNaN(v));
+    g.dir = null;
+    if(nums.length>=2){
+      const diff = nums[nums.length-1]-nums[0];
+      const better = isLowerBetterTest(g.name, g.komponen) ? -diff : diff;
+      g.dir = Math.abs(diff)<1e-9 ? 0 : (better>0 ? 1 : -1);
+      g.first = nums[0]; g.last = nums[nums.length-1];
+      if(g.dir>0) up++; else if(g.dir<0) down++;
+    }
+    return g;
+  });
+
+  const log = (Array.isArray(a.bodyLog) ? a.bodyLog.slice() : []).sort((x,y)=>(x.date||'').localeCompare(y.date||''));
+  let weightDelta = null;
+  const lw = log.filter(l=>numFrom(l.weight)!==null);
+  if(lw.length>=2) weightDelta = Math.round((numFrom(lw[lw.length-1].weight)-numFrom(lw[0].weight))*10)/10;
+
+  const st = computeTodayStatus().list.find(s=>s.uid===a.uid) || null;
+  return { rows, done, rate, weeks, rpe7avg: apAvg(rpe7), rpe28avg: apAvg(rpe28), rpe7n: rpe7.length, testGroups, up, down, log, weightDelta, st };
+}
+
+function renderAthleteTab(){
+  const el = document.getElementById('athleteTabList');
+  if(!el) return;
+  const q = (document.getElementById('athleteSearch')?.value || '').trim().toLowerCase();
+  const stat = {}; computeTodayStatus().list.forEach(s=>{ stat[s.uid] = s; });
+  const list = athletesCache.filter(a=>!q || (a.name||a.email||'').toLowerCase().includes(q) || (a.sport||'').toLowerCase().includes(q));
+  el.innerHTML = list.length ? list.map(a=>{
+    const s = stat[a.uid] || {};
+    const dot = s.level==='red' ? '🔴' : s.level==='yellow' ? '🟡' : s.level==='green' ? '🟢' : '⚪';
+    const meta = [a.sport ? a.sport + (a.silatCategory?' · '+a.silatCategory:'') : null, a.age ? a.age+' th' : null, a.trainingGroup||null].filter(Boolean).join(' · ') || 'Belum ada data';
+    return `<div class="ap-item" data-uid="${a.uid}">
+      <div class="ap-avatar">${escapeHtml(apInitials(a.name||a.email))}</div>
+      <div style="flex:1;min-width:0;"><div class="ap-name">${escapeHtml(a.name||a.email)}</div><div class="athlete-meta">${escapeHtml(meta)}</div>
+      <div class="athlete-meta">${s.total ? (s.rate+'% tugas selesai · '+s.doneWeek+' latihan minggu ini') : 'Belum ada tugas'}</div></div>
+      <div style="font-size:18px;">${dot}</div><div style="color:var(--muted);">›</div></div>`;
+  }).join('') : '<div class="empty-msg">'+(athletesCache.length ? 'Tidak ada atlet yang cocok.' : 'Belum ada atlet yang mendaftar.')+'</div>';
+}
+
+function openAthleteProfile(uid){
+  if(!athletesCache.find(a=>a.uid===uid)) return;
+  openAthleteUid = uid;
+  renderAthleteProfile();
+  const ov = document.getElementById('athleteProfileOverlay');
+  ov.style.display = 'block'; ov.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+function closeAthleteProfile(){
+  openAthleteUid = null;
+  document.getElementById('athleteProfileOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function renderAthleteProfile(){
+  const a = athletesCache.find(x=>x.uid===openAthleteUid); if(!a) return;
+  const D = athleteData(a);
+  const st = D.st || {};
+  const lastLog = D.log.length ? D.log[D.log.length-1] : null;
+  const weight = (lastLog && sessionHas(lastLog.weight)) ? lastLog.weight : a.weight;
+  const height = (lastLog && sessionHas(lastLog.height)) ? lastLog.height : a.height;
+  const stChip = st.level==='red' ? '🔴 Perlu perhatian' : st.level==='yellow' ? '🟡 Beban tinggi' : st.level==='green' ? '🟢 Sesuai target' : '⚪ Belum ada tugas';
+  const chips = [a.age?a.age+' th':null, a.gender||null, a.sport ? a.sport+(a.silatCategory?' · '+a.silatCategory:'') : null, a.weightClass||null].filter(Boolean);
+  const thisWeek = D.weeks[D.weeks.length-1].n;
+  const maxW = Math.max(1, ...D.weeks.map(w=>w.n));
+  const row = (l,r)=>`<div class="attn-row"><span class="attn-name">${l}</span><span class="attn-pct" style="text-align:right;color:var(--muted);">${r}</span></div>`;
+  const arrow = d => d>0 ? '🟢 membaik' : d<0 ? '🔴 menurun' : '⚪ tetap';
+
+  const html = `
+  <div class="ap-wrap">
+    <div class="ap-top"><button type="button" class="role-back-btn" data-ap="close" style="margin:0;">← Kembali</button><div class="ap-toptitle">Profil Atlet</div></div>
+
+    <div class="section-card">
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="ap-avatar big">${escapeHtml(apInitials(a.name||a.email))}</div>
+        <div style="min-width:0;"><div class="section-title" style="margin:0;">${escapeHtml(a.name||a.email)}</div>
+          <div class="athlete-meta">${chips.length?escapeHtml(chips.join(' · ')):'Data profil belum lengkap'}</div>
+          <div class="athlete-meta">👥 Kelompok: ${escapeHtml(a.trainingGroup||'-')}</div></div>
+      </div>
+      <div class="ap-status ${st.level||'none'}">${stChip}${st.reasons && st.reasons.length ? ' · '+escapeHtml(st.reasons.join(', ')) : ''}</div>
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-card"><div class="dash-num">${D.rate!==null?D.rate+'%':'-'}</div><div class="dash-label">Tugas selesai</div><div class="dash-caption">${D.done.length}/${D.rows.length} tugas</div></div>
+      <div class="dash-card"><div class="dash-num">${thisWeek}</div><div class="dash-label">Kehadiran minggu ini</div><div class="dash-caption">latihan diselesaikan</div></div>
+      <div class="dash-card"><div class="dash-num ${D.rpe7avg!==null&&D.rpe7avg>=8?'warn':''}">${D.rpe7avg!==null?D.rpe7avg.toFixed(1):'-'}</div><div class="dash-label">RPE rata-rata 7 hari</div><div class="dash-caption">${D.rpe28avg!==null?'28 hari: '+D.rpe28avg.toFixed(1):'belum ada RPE'}</div></div>
+      <div class="dash-card"><div class="dash-num" style="font-size:20px;">${escapeHtml(a.fitnessCondition||'-')}</div><div class="dash-label">Kondisi kebugaran</div><div class="dash-caption">dinilai coach</div></div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">📈 Progress</div>
+      <div class="section-sub">Ringkasan perkembangan atlet.</div>
+      ${row('Hasil tes fisik', D.testGroups.some(g=>g.dir!==null) ? '🟢 '+D.up+' membaik · 🔴 '+D.down+' menurun' : 'Belum ada tes berulang')}
+      ${row('Berat badan', D.weightDelta!==null ? (D.weightDelta>0?'+':'')+D.weightDelta+' kg sejak pencatatan pertama' : (weight?weight+' kg':'-'))}
+      ${row('Penyelesaian tugas', D.rate!==null ? D.rate+'%' : '-')}
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">🩺 Kondisi, Catatan & Cedera</div>
+      <div class="section-sub">Hanya diisi dan dilihat pelatih.</div>
+      <label class="sf-lab">Kondisi kebugaran</label>
+      <select id="apCond"><option value="">Pilih...</option>${FIT_CONDITIONS.map(c=>'<option'+(a.fitnessCondition===c?' selected':'')+'>'+c+'</option>').join('')}</select>
+      <label class="sf-lab">Kelompok latihan</label>
+      <input type="text" id="apGroup" maxlength="40" placeholder="mis. Kelompok A / Pemula / Elite" value="${escapeHtml(a.trainingGroup||'')}">
+      <label class="sf-lab">Catatan coach</label>
+      <textarea id="apNote" rows="3" maxlength="600" placeholder="Evaluasi, kekuatan, hal yang perlu diperbaiki...">${escapeHtml(a.coachNote||'')}</textarea>
+      <label class="sf-lab">Riwayat cedera (jika relevan)</label>
+      <textarea id="apInjury" rows="3" maxlength="600" placeholder="mis. Cedera lutut kiri (Agu 2026), sudah pulih">${escapeHtml(a.injuryHistory||'')}</textarea>
+      <div id="apErr" class="auth-error" style="display:none"></div>
+      <button type="button" class="btn-primary" data-ap="save">Simpan</button>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">⚖️ Berat & Tinggi Badan</div>
+      <div class="section-sub">Sekarang: ${weight?weight+' kg':'-'} · ${height?height+' cm':'-'}</div>
+      <div class="sf-row2" style="align-items:end;">
+        <div><label class="sf-lab">Berat (kg)</label><input type="number" id="apW" step="0.1" min="0" inputmode="decimal" placeholder="${weight||'60'}"></div>
+        <div><label class="sf-lab">Tinggi (cm)</label><input type="number" id="apH" step="0.1" min="0" inputmode="decimal" placeholder="${height||'170'}"></div>
+      </div>
+      <button type="button" class="edit-cancel-btn" style="width:100%;margin-bottom:8px;" data-ap="addbody">+ Catat ukuran hari ini</button>
+      ${D.log.length ? D.log.slice(-6).reverse().map(l=>row(escapeHtml(formatDateShort(l.date)||l.date||'-'), (sessionHas(l.weight)?l.weight+' kg':'-')+' · '+(sessionHas(l.height)?l.height+' cm':'-'))).join('') : '<div class="empty-msg" style="padding:8px;">Belum ada riwayat ukuran.</div>'}
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">✅ Kehadiran</div>
+      <div class="section-sub">Latihan yang diselesaikan per minggu (6 minggu terakhir).</div>
+      ${D.weeks.map(w=>`<div class="dash-weekly-row"><div class="dwk-label">${escapeHtml(formatDateShort(isoLocal(new Date(w.st)))||'')}</div><div class="dwk-bar-wrap"><div class="dwk-bar" style="width:${Math.round(w.n/maxW*100)}%;background:#146C43"></div></div><div class="dwk-val">${w.n}</div></div>`).join('')}
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">🏃 Riwayat Latihan</div>
+      <div class="section-sub">10 latihan terakhir yang diselesaikan.</div>
+      ${D.done.length ? D.done.slice(0,10).map(r=>{
+        const bits = [r.t.duration ? r.t.duration+' mnt' : null, r.c.rpe ? 'RPE '+r.c.rpe : null, r.c.load ? 'beban '+r.c.load : null].filter(Boolean).join(' · ');
+        return `<div class="attn-row" style="align-items:flex-start;"><span class="attn-name"><b>${escapeHtml(r.t.title)}</b>${r.c.note?'<div class="athlete-meta"><i>'+escapeHtml(r.c.note)+'</i></div>':''}</span><span class="attn-pct" style="text-align:right;color:var(--muted);">${escapeHtml(apDate(r.c.completedAt))}${bits?'<br>'+escapeHtml(bits):''}</span></div>`;
+      }).join('') : '<div class="empty-msg">Belum ada latihan yang diselesaikan.</div>'}
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">🧪 Hasil Tes</div>
+      ${D.testGroups.length ? D.testGroups.map(g=>`
+        <div style="margin-bottom:12px;">
+          <div class="attn-row" style="border:none;padding-bottom:2px;"><span class="attn-name"><b>${escapeHtml(g.name)}</b>${g.komponen?' <span style="color:var(--muted);font-weight:400;">· '+escapeHtml(g.komponen)+'</span>':''}</span><span class="attn-pct" style="color:var(--muted);">${g.dir!==null ? arrow(g.dir)+' ('+g.first+' → '+g.last+')' : ''}</span></div>
+          ${g.items.slice().reverse().map(i=>`<div class="athlete-meta">${escapeHtml(formatDateShort(i.date)||i.date||'-')} · <b style="color:var(--ink);">${escapeHtml(i.result)}</b>${i.note?' · '+escapeHtml(i.note):''}</div>`).join('')}
+        </div>`).join('') : '<div class="empty-msg">Belum ada hasil tes untuk atlet ini. Catat di tab Program Latihan → Tes Fisik.</div>'}
+    </div>
+  </div>`;
+  document.getElementById('athleteProfileBody').innerHTML = html;
+}
+
+async function saveAthleteCoachData(){
+  const a = athletesCache.find(x=>x.uid===openAthleteUid); if(!a) return;
+  const patch = {
+    fitnessCondition: document.getElementById('apCond').value,
+    trainingGroup: document.getElementById('apGroup').value.trim(),
+    coachNote: document.getElementById('apNote').value.trim(),
+    injuryHistory: document.getElementById('apInjury').value.trim()
+  };
+  const err = document.getElementById('apErr'); err.style.display = 'none';
+  try{
+    await dbf.collection('users').doc(a.uid).update(patch);
+    Object.assign(a, patch);
+    renderAthleteProfile(); renderAthleteTab();
+    showCompletionToast('✓ Profil atlet disimpan');
+  }catch(e){
+    err.textContent = 'Gagal menyimpan: ' + e.message + (/permission/i.test(e.message) ? ' — aturan Firestore perlu mengizinkan pelatih mengubah data atletnya.' : '');
+    err.style.display = 'block';
+  }
+}
+async function addAthleteBodyLog(){
+  const a = athletesCache.find(x=>x.uid===openAthleteUid); if(!a) return;
+  const w = document.getElementById('apW').value, h = document.getElementById('apH').value;
+  if(w==='' && h===''){ alert('Isi berat atau tinggi badan dulu.'); return; }
+  const entry = { date: isoLocal(new Date()), weight: w===''?'':Number(w), height: h===''?'':Number(h) };
+  const bodyLog = (Array.isArray(a.bodyLog)?a.bodyLog:[]).concat([entry]);
+  const patch = { bodyLog };
+  if(entry.weight!=='') patch.weight = entry.weight;
+  if(entry.height!=='') patch.height = entry.height;
+  try{
+    await dbf.collection('users').doc(a.uid).update(patch);
+    Object.assign(a, patch);
+    renderAthleteProfile(); renderAthleteTab();
+    showCompletionToast('✓ Ukuran dicatat');
+  }catch(e){
+    alert('Gagal menyimpan: ' + e.message + (/permission/i.test(e.message) ? '\n\nAturan Firestore perlu mengizinkan pelatih mengubah data atletnya.' : ''));
+  }
+}
+document.getElementById('athleteProfileOverlay').addEventListener('click', (e)=>{
+  const el = e.target.closest('[data-ap]'); if(!el) return;
+  if(el.dataset.ap==='close') closeAthleteProfile();
+  else if(el.dataset.ap==='save') saveAthleteCoachData();
+  else if(el.dataset.ap==='addbody') addAthleteBodyLog();
+});
+document.getElementById('athleteTabList').addEventListener('click', (e)=>{
+  const it = e.target.closest('.ap-item'); if(it) openAthleteProfile(it.dataset.uid);
+});
+document.getElementById('athleteSearch').addEventListener('input', renderAthleteTab);
 
 function renderWeeklyChart(){
   const canvas = document.getElementById('weeklyChart');
@@ -2664,6 +3271,16 @@ document.getElementById('phaseList').addEventListener('click', async (e)=>{
     const pr = programsCache.find(p=>p.id===progid);
     const sessions = (pr.sessions||[]).filter(s=>s.id!==sid);
     await updateProgramSessions(progid, sessions);
+  }else if(action==='opensessionform'){
+    if(!isCoach) return;
+    openSessionForm(progid, null);
+  }else if(action==='editsession'){
+    if(!isCoach) return;
+    openSessionForm(progid, sid);
+  }else if(action==='togglesessiondetail'){
+    const card = el.closest('.sx-card');
+    const panel = card && card.querySelector('.sx-detail');
+    if(panel){ panel.classList.toggle('open'); el.textContent = panel.classList.contains('open') ? 'Sembunyikan ▴' : 'Detail ▾'; }
   }else if(action==='addsession'){
     if(!isCoach) return;
     const container = el.parentElement;
@@ -2743,6 +3360,178 @@ document.getElementById('phaseList').addEventListener('keydown', async (e)=>{
   }
 });
 
+
+/* ---------------- pertemuan (sesi latihan) ---------------- */
+const SESSION_STATUS = [
+  { v:'belum',       label:'Belum dimulai' },
+  { v:'rencana',     label:'Direncanakan' },
+  { v:'berlangsung', label:'Sedang berlangsung' },
+  { v:'selesai',     label:'Selesai' },
+  { v:'batal',       label:'Tidak terlaksana' }
+];
+function sessionStatus(s){
+  if(s && s.status && SESSION_STATUS.some(x=>x.v===s.status)) return s.status;
+  if(s && s.achieved) return 'selesai';
+  return (s && s.date) ? 'rencana' : 'belum';
+}
+function sessionStatusLabel(v){ const x = SESSION_STATUS.find(o=>o.v===v); return x ? x.label : '-'; }
+function sessionIsOpen(s){ const st = sessionStatus(s); return st!=='selesai' && st!=='batal'; }
+function sessionNo(idx){ return 'Pertemuan ' + String(idx+1).padStart(2,'0'); }
+function sessionHas(v){ return v!==undefined && v!==null && v!==''; }
+function sessionDateParts(date){
+  if(!date) return null;
+  const d = new Date(date+'T00:00:00'); if(isNaN(d.getTime())) return null;
+  const mo=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+  return { d:d.getDate(), m:mo[d.getMonth()] };
+}
+function numFrom(v){
+  if(v===''||v===null||v===undefined) return null;
+  if(typeof v==='number') return isFinite(v) ? v : null;
+  const m = String(v).replace(',', '.').match(/\d+(?:\.\d+)?/g);
+  return m ? m.map(Number).reduce((x,y)=>x*y,1) : null;
+}
+function sessionCompare(s){
+  const exp = sessionHas(s.expected) ? s.expected : (athletesCache.length || null);
+  const comps = [
+    { k:'Durasi',     unit:' menit', p:s.duration,  a:s.aDuration },
+    { k:'Volume',     unit:'',       p:s.volume,    a:s.aVolume },
+    { k:'Intensitas', unit:'%',      p:s.intensity, a:s.aIntensity },
+    { k:'RPE',        unit:'',       p:s.rpe,       a:s.aRpe },
+    { k:'Kehadiran',  unit:'',       p:exp,         a:s.present }
+  ].map(c=>{
+    const pn = numFrom(c.p), an = numFrom(c.a);
+    const score = (pn!==null && an!==null && pn>0) ? Math.max(0, 1 - Math.abs(an-pn)/pn) : null;
+    return Object.assign(c, { pn, an, score });
+  });
+  const used = comps.filter(c=>c.score!==null);
+  const total = used.length ? Math.round(used.reduce((x,c)=>x+c.score,0)/used.length*100) : null;
+  return { comps, total, used: used.length };
+}
+function scoreClass(pct){ return pct>=90 ? 'good' : pct>=75 ? 'mid' : 'bad'; }
+function scoreLabel(pct){ return pct>=90 ? 'Sesuai rencana' : pct>=75 ? 'Cukup sesuai' : 'Perlu evaluasi'; }
+function progAvgHtml(sessions){
+  const sc = sessions.map(x=>sessionCompare(x).total).filter(x=>x!==null);
+  if(!sc.length) return '';
+  const avg = Math.round(sc.reduce((x,y)=>x+y,0)/sc.length);
+  return '<div class="sx-avg">📊 Kesesuaian program: '+avg+'% <span style="font-weight:400;color:var(--muted);">· '+scoreLabel(avg)+' ('+sc.length+' pertemuan dinilai)</span></div>';
+}
+function sessionRowHtml(pr, s, idx, isCoach){
+  const dp = sessionDateParts(s.date);
+  const st = sessionStatus(s);
+  const cmp = sessionCompare(s);
+  const chips = [];
+  if(sessionHas(s.type)) chips.push('🏷️ '+s.type);
+  const dur = sessionHas(s.aDuration) ? s.aDuration : s.duration;
+  if(sessionHas(dur)) chips.push('⏱️ '+dur+' mnt');
+  if(sessionHas(s.present)) chips.push('👥 '+s.present+' hadir');
+  const dateFull = s.date ? (formatDateShort(s.date)||s.date) : '';
+  const info = [['Status', sessionStatusLabel(st)], ['Tanggal', dateFull], ['Tujuan latihan', s.target], ['Jenis latihan', s.type], ['Frekuensi', s.frequency], ['Catatan coach', s.note]];
+  const infoHtml = info.map(r=>`<div class="sx-row"><div class="k">${r[0]}</div><div class="v">${sessionHas(r[1]) ? escapeHtml(r[1]) : '<span style="color:var(--muted)">-</span>'}</div></div>`).join('');
+  const fmt = (v,u)=> sessionHas(v) ? escapeHtml(String(v)+u) : '<span style="color:var(--muted)">-</span>';
+  const cmpRows = cmp.comps.map(c=>{
+    const cls = c.score===null ? '' : scoreClass(Math.round(c.score*100));
+    const planShow = (c.k==='Kehadiran' && !sessionHas(s.expected) && c.p) ? c.p+' (semua atlet)' : c.p;
+    return `<div class="sx-cmp-r"><div class="k">${c.k}</div><div>${sessionHas(planShow)?escapeHtml(String(planShow)+(typeof planShow==='number'||/^\d+$/.test(String(planShow))?c.unit:'')):'<span style="color:var(--muted)">-</span>'}</div><div class="${cls}">${fmt(c.a,c.unit)}</div></div>`;
+  }).join('');
+  const scoreHtml = cmp.total!==null
+    ? `<div class="sx-score ${scoreClass(cmp.total)}"><span>📊 Kesesuaian program: ${cmp.total}%</span><small>${scoreLabel(cmp.total)}</small></div>`
+    : `<div class="sx-score none">📊 Isi rencana dan realisasi untuk melihat kesesuaian program.</div>`;
+  if(cmp.total!==null) chips.push('📊 '+cmp.total+'%');
+  return `
+  <div class="sx-card">
+    <div class="sx-head">
+      <div class="sx-date ${dp?'':'empty'}"><div class="d">${dp?dp.d:'–'}</div><div class="m">${dp?dp.m:'Tgl'}</div></div>
+      <div style="flex:1;min-width:0;">
+        <div class="sx-title">${sessionNo(idx)}</div>
+        <div class="sx-goal ${st==='selesai'?'achieved':''}">${escapeHtml(s.target||'-')}</div>
+      </div>
+    </div>
+    ${chips.length ? '<div class="sx-chips">'+chips.map(c=>'<span class="sx-chip">'+escapeHtml(c)+'</span>').join('')+'</div>' : ''}
+    <div class="sx-actions">
+      ${isCoach
+        ? '<select class="sx-status st-'+st+'" data-action="setstatus" data-progid="'+pr.id+'" data-sid="'+s.id+'">'+SESSION_STATUS.map(o=>'<option value="'+o.v+'"'+(o.v===st?' selected':'')+'>'+o.label+'</option>').join('')+'</select>'
+        : '<span class="sx-status st-'+st+'">'+sessionStatusLabel(st)+'</span>'}
+      <button type="button" class="sx-link" data-action="togglesessiondetail">Detail ▾</button>
+      ${isCoach?'<button type="button" class="sx-link" data-action="editsession" data-progid="'+pr.id+'" data-sid="'+s.id+'">✏️ Edit</button>':''}
+      ${isCoach?'<button class="session-del" data-action="delsession" data-progid="'+pr.id+'" data-sid="'+s.id+'">&times;</button>':''}
+    </div>
+    <div class="sx-detail">
+      <div class="sx-cmp"><div class="sx-cmp-h"><div>Komponen</div><div>Rencana</div><div>Realisasi</div></div>${cmpRows}</div>
+      ${scoreHtml}
+      ${infoHtml}
+    </div>
+  </div>`;
+}
+
+let sessionFormCtx = null;
+function openSessionForm(progid, sid){
+  const pr = programsCache.find(x=>x.id===progid); if(!pr) return;
+  const list = pr.sessions || [];
+  const cur = sid ? list.find(x=>x.id===sid) : null;
+  const idx = cur ? list.findIndex(x=>x.id===sid) : list.length;
+  sessionFormCtx = { progid, sid: sid||null };
+  const $ = id=>document.getElementById(id);
+  $('sfTitle').textContent = sessionNo(idx) + ' · ' + pr.name;
+  $('sfSub').textContent = cur ? 'Ubah detail pertemuan ini.' : 'Isi rencana dulu; realisasi diisi setelah latihan.';
+  const v = (k)=> cur && sessionHas(cur[k]) ? cur[k] : '';
+  const vn = (k)=>{ const x = v(k); return (x!=='' && numFrom(x)!==null && typeof x!=='string') ? x : (x!=='' && /^\d+(\.\d+)?$/.test(String(x)) ? x : ''); };
+  $('sfStatus').value = cur ? sessionStatus(cur) : 'belum';
+  $('sfDate').value = v('date'); $('sfGoal').value = v('target'); $('sfType').value = v('type');
+  $('sfDuration').value = vn('duration'); $('sfADuration').value = vn('aDuration');
+  $('sfVolume').value = v('volume'); $('sfAVolume').value = v('aVolume');
+  $('sfIntensity').value = vn('intensity'); $('sfAIntensity').value = vn('aIntensity');
+  $('sfRpe').value = vn('rpe'); $('sfARpe').value = vn('aRpe');
+  $('sfExpected').value = vn('expected'); $('sfPresent').value = vn('present');
+  $('sfExpected').placeholder = athletesCache.length ? String(athletesCache.length) : '0';
+  $('sfFrequency').value = v('frequency'); $('sfNote').value = v('note');
+  $('sfError').style.display = 'none';
+  $('sessionFormOverlay').style.display = 'flex';
+}
+function closeSessionForm(){ document.getElementById('sessionFormOverlay').style.display = 'none'; sessionFormCtx = null; }
+async function saveSessionForm(){
+  if(!sessionFormCtx || currentProfile.role !== 'coach') return;
+  const $ = id=>document.getElementById(id);
+  const goal = $('sfGoal').value.trim();
+  const err = $('sfError');
+  if(!goal){ err.textContent = 'Tujuan latihan wajib diisi.'; err.style.display = 'block'; return; }
+  const num = (id)=>{ const x = $(id).value; return x==='' ? '' : Number(x); };
+  let status = $('sfStatus').value;
+  if(!sessionFormCtx.sid && status==='belum' && $('sfDate').value) status = 'rencana';
+  const data = {
+    status, achieved: status==='selesai',
+    date: $('sfDate').value, target: goal, type: $('sfType').value.trim(),
+    duration: num('sfDuration'), aDuration: num('sfADuration'),
+    volume: $('sfVolume').value.trim(), aVolume: $('sfAVolume').value.trim(),
+    intensity: num('sfIntensity'), aIntensity: num('sfAIntensity'),
+    rpe: num('sfRpe'), aRpe: num('sfARpe'),
+    expected: num('sfExpected'), present: num('sfPresent'),
+    frequency: $('sfFrequency').value.trim(), note: $('sfNote').value.trim()
+  };
+  const pr = programsCache.find(x=>x.id===sessionFormCtx.progid); if(!pr) return;
+  let sessions;
+  if(sessionFormCtx.sid){
+    sessions = (pr.sessions||[]).map(x=> x.id===sessionFormCtx.sid ? Object.assign({}, x, data) : x);
+  }else{
+    sessions = (pr.sessions||[]).concat([Object.assign({ id:uid() }, data)]);
+  }
+  const btn = $('sfSave'); btn.disabled = true;
+  try{ await updateProgramSessions(pr.id, sessions); closeSessionForm(); }
+  catch(e){ err.textContent = 'Gagal menyimpan: '+e.message; err.style.display = 'block'; }
+  btn.disabled = false;
+}
+document.getElementById('phaseList').addEventListener('change', async (e)=>{
+  const el = e.target.closest('select[data-action="setstatus"]');
+  if(!el || currentProfile.role !== 'coach') return;
+  const pr = programsCache.find(x=>x.id===el.dataset.progid); if(!pr) return;
+  const status = el.value;
+  const sessions = (pr.sessions||[]).map(x=> x.id===el.dataset.sid ? Object.assign({}, x, { status, achieved: status==='selesai' }) : x);
+  el.className = 'sx-status st-'+status;
+  try{ await updateProgramSessions(pr.id, sessions); }catch(err){ alert('Gagal menyimpan status: '+err.message); }
+});
+document.getElementById('sfCancel').addEventListener('click', closeSessionForm);
+document.getElementById('sfSave').addEventListener('click', saveSessionForm);
+document.getElementById('sessionFormOverlay').addEventListener('click', (e)=>{ if(e.target.id==='sessionFormOverlay') closeSessionForm(); });
+
 document.getElementById('programSearchInput').addEventListener('input', (e)=>{
   programSearchQuery = e.target.value.trim().toLowerCase();
   renderProgramTab();
@@ -2776,23 +3565,7 @@ function renderProgramTab(){
           const sessions = pr.sessions || [];
           const prTotal = sessions.length, prAchieved = sessions.filter(s=>s.achieved).length;
           const prPct = prTotal>0 ? Math.round((prAchieved/prTotal)*100) : 0;
-          const sessionsHtml = sessions.map((s, idx)=>{
-            const badgeText = s.date ? (formatDateShort(s.date)||('P'+(idx+1))) : ('P'+(idx+1));
-            return `
-            <div class="session-row">
-              <div class="session-badge">${escapeHtml(badgeText)}</div>
-              <div class="session-body">
-                <div class="session-target ${s.achieved?'achieved':''}">${escapeHtml(s.target)}</div>
-                <div class="session-actions">
-                  <button class="status-btn ${s.achieved?'achieved':''}" ${isCoach?'':'disabled'} data-action="togglesession" data-progid="${pr.id}" data-sid="${s.id}">${s.achieved?'Tercapai':'Belum tercapai'}</button>
-                  ${isCoach?'<button class="session-del" data-action="delsession" data-progid="'+pr.id+'" data-sid="'+s.id+'">&times;</button>':''}
-                </div>
-                ${isCoach
-                  ? '<input type="text" class="session-note-input" placeholder="Catatan evaluasi pelatih..." maxlength="200" value="'+escapeHtml(s.note||'')+'" data-action="notesession" data-progid="'+pr.id+'" data-sid="'+s.id+'">'
-                  : (s.note ? '<div class="session-note-view">Evaluasi: '+escapeHtml(s.note)+'</div>' : '')}
-              </div>
-            </div>`;
-          }).join('');
+          const sessionsHtml = sessions.map((s, idx)=>sessionRowHtml(pr, s, idx, isCoach)).join('');
           return `
             <div class="program">
               <div class="program-head" data-action="toggleprogram" data-progid="${pr.id}">
@@ -2803,13 +3576,11 @@ function renderProgramTab(){
                 ${isCoach?'<button class="program-del" data-action="delprogram" data-progid="'+pr.id+'">&times;</button>':''}
               </div>
               <div class="sessions ${pr._open?'open':''}">
+                ${progAvgHtml(sessions)}
                 ${sessionsHtml}
                 ${isCoach?`
-                <div class="add-session">
-                  <input type="date" class="new-session-date" data-pid="${p.id}" data-progid="${pr.id}">
-                  <input type="text" placeholder="Target pertemuan berikutnya..." maxlength="120" data-pid="${p.id}" data-progid="${pr.id}" class="new-session-input">
-                  <button data-action="addsession" data-pid="${p.id}" data-progid="${pr.id}">+ Pertemuan</button>
-                </div>`:''}
+                <button type="button" class="add-session-btn" data-action="opensessionform" data-pid="${p.id}" data-progid="${pr.id}">+ Pertemuan</button>
+                `:''}
               </div>
             </div>`;
         }).join('');
