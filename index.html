@@ -541,6 +541,143 @@
 #tab-program .add-program button{border-radius:10px;font-weight:600;padding:0 14px}
 .fab-top{position:fixed;right:14px;bottom:18px;width:44px;height:44px;border-radius:50%;border:0;background:#1E6B3E;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.25);display:none;place-items:center;cursor:pointer;z-index:50}
 .fab-top svg{width:22px;height:22px}
+
+/* ===== Evaluasi (dashboard) ===== */
+.app-header{background:linear-gradient(135deg,#0B3D22,#14663A);color:#fff;margin:-26px -16px 16px;padding:22px 16px 16px;border-radius:0 0 18px 18px}
+.app-header .hamburger-btn{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff}
+.app-header .role-badge{background:rgba(255,255,255,.18);color:#fff;border-color:transparent}
+.app-header .who-sub{flex-basis:100%;font-size:12px;color:#CFE9D8;font-family:'Inter',sans-serif}
+.tabs{background:#EEF3F0;border:0;border-radius:14px;padding:4px}
+.tab-btn{border-radius:11px}
+.tab-btn.active{background:#0F7A43;color:#fff}
+.ev-head h2{font:600 22px 'Oswald',sans-serif;margin:0}.ev-head p{margin:2px 0 14px;font-size:12.5px;color:var(--muted)}
+.ev-hero{display:flex;gap:12px;align-items:center;background:linear-gradient(120deg,#E3F5EA,#F3FBF6);border:1px solid #CFE7D9;border-radius:16px;padding:14px;margin-bottom:18px}
+.ev-hero .hi{flex:1}.ev-hero .section-title{font-size:17px;margin:0 0 4px}
+.ev-hero .quote-banner{font-style:italic;color:#146C43;font-size:12px;background:none;border:0;padding:0;margin-top:6px}
+.ev-week{border-left:1px solid #CFE7D9;padding-left:12px;cursor:pointer;background:none;border-top:0;border-right:0;border-bottom:0;text-align:left;font-family:'Inter',sans-serif;color:var(--ink);min-width:104px}
+.ev-week b{display:block;font-size:13px}.ev-week span{font-size:11px;color:var(--muted)}
+.ev-sec{display:flex;align-items:center;gap:8px;margin:6px 0 10px}.ev-sec svg{width:26px;height:26px;color:var(--accent)}
+.ev-sec b{font:600 17px 'Oswald',sans-serif;display:block}.ev-sec span{font-size:12px;color:var(--muted)}
+.ev-sec .grow{flex:1}
+.ev-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+@media(min-width:520px){.ev-kpis{grid-template-columns:repeat(4,1fr)}}
+.ev-k{border-radius:14px;padding:12px 8px;text-align:center;border:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;color:var(--ink)}
+.ev-k svg{width:22px;height:22px;margin-bottom:4px}.ev-k .v{font:700 22px 'Oswald',sans-serif}.ev-k .l{font-size:11.5px;font-weight:500}.ev-k .c{font-size:10.5px;color:var(--muted)}
+.ev-k.red{background:#FDEBEC;border-color:#F6CDD0}.ev-k.red svg,.ev-k.red .l{color:#B3261E}
+.ev-k.amber{background:#FFF4DE;border-color:#F7DFA9}.ev-k.amber svg{color:#B7791F}
+.ev-k.grn{background:#E4F6EA;border-color:#BFE5CC}.ev-k.grn svg,.ev-k.grn .l{color:#146C43}
+.ev-k.blu{background:#E6F0FB;border-color:#C5DBF3}.ev-k.blu svg{color:#2F6DB5}
+.ev-m{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.ev-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--ink);transition:transform .12s}
+.ev-card:active,.ev-k:active,.kpi:active{transform:scale(.97)}
+.ev-card .t{display:flex;gap:8px;align-items:flex-start}.ev-card svg{width:22px;height:22px;color:var(--accent);flex-shrink:0}
+.ev-card .n{flex:1;font-size:12.5px;font-weight:600}.ev-card .n small{display:block;font-weight:400;color:var(--muted);font-size:11px;line-height:1.5}
+.ev-card .pc{font:600 12px 'Inter',sans-serif;background:#E4F6EA;color:#146C43;border-radius:20px;padding:3px 8px}
+.ev-card .pc.bad{background:#FDEBEC;color:#B3261E}
+.ev-card .bar{height:5px;background:#E6EEE9;border-radius:5px;margin-top:8px;overflow:hidden}.ev-card .bar i{display:block;height:100%;background:linear-gradient(90deg,#1E8A4C,#4ADE80)}
+.ev-card.badc .bar i{background:#F28B82}
+.ev-note{display:flex;gap:10px;align-items:center;background:#EAF7EF;border:1px solid #CFE7D9;border-radius:14px;padding:12px;margin-bottom:16px;cursor:pointer;width:100%;text-align:left;font-family:'Inter',sans-serif;color:var(--ink)}
+.ev-note svg{width:24px;height:24px;color:var(--accent);flex-shrink:0}.ev-note b{font-size:13px;display:block;color:#0B3D22}.ev-note span{font-size:12px;color:var(--muted);line-height:1.45}
+.abs-card{border-radius:14px;border-left:6px solid #0F7A43}
+.abs-top{display:flex;gap:10px;align-items:center;margin-bottom:10px}.abs-ic{width:38px;height:38px;border-radius:10px;background:#E4F6EA;display:grid;place-items:center;color:#0F7A43;flex-shrink:0}.abs-ic svg{width:22px;height:22px}
+.abs-t{flex:1;font-size:12px;color:var(--muted)}.abs-t b{display:block;font-size:14px;color:#0B3D22}
+.pill-btn{background:#fff;border:1px solid #BFE0CD;color:#0F7A43;border-radius:20px;padding:7px 12px;font:600 12px 'Inter',sans-serif;cursor:pointer;white-space:nowrap}
+.pill-btn:active{background:#E4F6EA}
+.abs-body{background:linear-gradient(180deg,#F1FAF4,#E6F5EC);border-radius:12px;padding:12px;text-align:center}
+.abs-body .qr-wrap img{width:128px;height:128px;background:#fff;border-radius:10px;padding:6px}
+.abs-body .join-code-display{font-size:18px;margin:6px 0 10px;color:#0F7A43}
+.abs-btns{display:flex;gap:8px;justify-content:center}
+.ev-prog{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:18px}
+@media(min-width:520px){.ev-prog{grid-template-columns:repeat(4,1fr)}}
+.ev-prog .ev-card .t{align-items:center}.ev-prog .row{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:8px}.ev-prog .row b{color:var(--ink)}
+.ev-sep{font:600 13px 'Oswald',sans-serif;letter-spacing:.5px;color:var(--muted);margin:22px 0 10px;text-transform:uppercase}
+.ev-list .detail-row{font-size:12.5px}
+
+/* ===== Tugas (pelatih) ===== */
+.app-header{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
+.app-header .app-logo-sm{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.5);display:grid;place-items:center;flex-shrink:0}
+.app-logo-sm svg{width:28px;height:28px;color:#fff}
+.app-header .who{flex-direction:column;align-items:flex-start;gap:2px}
+.app-title{font:600 21px 'Oswald',sans-serif;line-height:1.1}
+.app-header .who-sub{flex-basis:auto;font-size:12.5px}
+.app-header .role-badge{margin-top:3px;font-size:11px}
+.app-header .hamburger-btn svg,.app-header .hamburger-btn svg *{stroke:#fff;fill:none}
+.app-header .hamburger-btn{width:40px;height:40px;padding:0;display:grid;place-items:center;position:relative;border-radius:50%}
+.app-header .hamburger-btn svg{width:22px;height:22px}
+.tab-btn{display:flex;align-items:center;justify-content:center;gap:6px}
+.tab-btn svg{width:18px;height:18px;flex-shrink:0}
+.tabs{box-shadow:0 2px 8px rgba(15,42,28,.06)}
+.tab-btn.active{background:linear-gradient(135deg,#0B4A28,#14663A);box-shadow:0 3px 8px rgba(11,74,40,.3)}
+@media(max-width:470px){.tab-btn{flex-direction:column;gap:2px;font-size:11px;padding:8px 2px}}
+.tk-form-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:16px;box-shadow:0 2px 10px rgba(15,42,28,.05)}
+.tk-banner{display:flex;gap:12px;align-items:center;color:#fff;padding:16px;background:linear-gradient(120deg,#0B3D22,#14663A)}
+.tk-bi{width:44px;height:44px;border-radius:12px;background:#fff;color:#14663A;display:grid;place-items:center;flex-shrink:0}.tk-bi svg{width:26px;height:26px}
+.tk-banner b{display:block;font:600 19px 'Oswald',sans-serif}.tk-banner span{font-size:12.5px;color:#D6EFDF}
+.tk-form{padding:14px 14px 16px;gap:14px !important}
+.frow{display:flex;gap:10px}.fi{width:38px;height:38px;border-radius:10px;background:#EEF3F0;display:grid;place-items:center;color:#0B3D22;flex-shrink:0;margin-top:2px}.fi svg{width:19px;height:19px}
+.fb{flex:1;min-width:0}.fb label{display:block;font-size:12.5px;font-weight:600;margin-bottom:5px}
+.fb input,.fb textarea,.fb select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:13px 'Inter',sans-serif;background:#fff;color:var(--ink)}
+.fb textarea{min-height:76px;resize:vertical}.fb .cnt{text-align:right;font-size:10.5px;color:var(--muted);margin-top:3px}
+.fb.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.trow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.trow select{flex:1;min-width:140px}
+.all-chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid #1E8A4C;border-radius:10px;padding:10px 12px;background:#fff;color:#0F7A43;font:600 12.5px 'Inter',sans-serif;cursor:pointer}
+.all-chip svg{width:16px;height:16px}.all-chip em{font-style:normal;visibility:hidden}.all-chip.on{background:#EAF7EF}.all-chip.on em{visibility:visible}
+.tk-send{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:12px;padding:14px;background:linear-gradient(135deg,#0B4A28,#14803F);color:#fff;font:600 15px 'Inter',sans-serif;cursor:pointer}
+.tk-send svg{width:18px;height:18px}.tk-send:active{transform:scale(.99)}
+.tk-active{background:linear-gradient(180deg,#F1FAF4,#F8FCF9);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:16px}
+.tk-ah{display:flex;align-items:center;gap:10px}.tk-ah .grow{flex:1;min-width:0}.tk-ah b{display:block;font:600 17px 'Oswald',sans-serif}.tk-ah span{font-size:12px;color:var(--muted)}
+.tk-ai{width:40px;height:40px;border-radius:11px;background:#0F7A43;color:#fff;display:grid;place-items:center;flex-shrink:0}.tk-ai svg{width:22px;height:22px}
+.tk-period{border:1px solid var(--line);border-radius:20px;background:#fff;padding:8px 10px;font:600 12px 'Inter',sans-serif;color:var(--ink);max-width:128px}
+.tk-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+@media(min-width:520px){.tk-kpis{grid-template-columns:repeat(4,1fr)}}
+.tk-k{position:relative;text-align:left;border:1px solid transparent;border-radius:14px;padding:12px;cursor:pointer;font-family:'Inter',sans-serif;color:var(--ink);background:#fff}
+.tk-k .ki{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;margin-bottom:6px}.tk-k .ki svg{width:15px;height:15px}
+.tk-k .v{font:700 22px 'Oswald',sans-serif}.tk-k .l{font-size:11.5px}.tk-k .ch{position:absolute;right:10px;top:50%;width:14px;height:14px;color:#E08A3C;transform:translateY(-50%)}
+.tk-k.r{background:#FDEBEC;border-color:#F6CDD0}.tk-k.r .ki{background:#E5484D}
+.tk-k.y{background:#FFF6E0;border-color:#F7E3AE}.tk-k.y .ki{background:#F5B800}
+.tk-k.g{background:#fff;border-color:var(--line)}.tk-k.g .ki{background:#1E9E55}
+.tk-k.n{background:#fff;border-color:var(--line)}.tk-k.n .ki{background:#7C8F99}
+.tk-k.sel{outline:2px solid #0F7A43}
+.tk-lt{font:600 14px 'Inter',sans-serif;margin:4px 0 8px;display:flex;justify-content:space-between;align-items:center}
+.tk-clear{border:0;background:none;color:#0F7A43;font:600 12px 'Inter',sans-serif;cursor:pointer}
+.tk-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.tk-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tk-ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#0F7A43,#14663A);color:#fff;display:grid;place-items:center;flex-shrink:0}.tk-ic svg{width:24px;height:24px}
+.tk-main{flex:1;min-width:130px}.tk-title{font-weight:600;font-size:14px}
+.tk-meta{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--muted);margin-top:3px}.tk-meta svg{width:13px;height:13px}
+.tk-side{width:150px}.tk-chip{display:inline-block;border-radius:20px;padding:4px 10px;font:600 11.5px 'Inter',sans-serif}
+.tk-chip.belum{background:#FDEBEC;color:#C0392B}.tk-chip.proses{background:#FFF1C9;color:#9A6A00}.tk-chip.selesai{background:#DDF3E5;color:#146C43}.tk-chip.jadwal{background:#E2EEFB;color:#2F6DB5}
+.tk-prog{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:11px}.tk-prog .bar{flex:1;height:5px;background:#E6EEE9;border-radius:5px;overflow:hidden}.tk-prog .bar i{display:block;height:100%;background:linear-gradient(90deg,#1E8A4C,#4ADE80)}
+.tk-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#0B3D22;display:grid;place-items:center;cursor:pointer;flex-shrink:0}.tk-btn svg{width:18px;height:18px}.tk-btn:active{background:#E4F6EA}
+.tk-btn.more{border-color:transparent;font-size:20px;line-height:1}
+@media(max-width:460px){.tk-side{width:auto;flex:1;order:5}.tk-btn{order:6}}
+.tk-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}.tk-item.open .tk-detail{display:block}
+.tk-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tk-tile{display:flex;align-items:center;gap:10px;border:0;background:#E7F4EC;border-radius:12px;padding:12px;text-align:left;cursor:pointer;font-family:'Inter',sans-serif;color:var(--ink)}
+.tk-tile svg.ti{width:30px;height:30px;color:#0B3D22}.tk-tile small{display:block;font-size:11px;color:var(--muted)}.tk-tile b{font:700 22px 'Oswald',sans-serif}.tk-tile .go{margin-left:auto;width:14px;height:14px;color:#6B8579}
+
+/* ===== Import Excel ===== */
+.imp-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:16px;box-shadow:0 2px 10px rgba(15,42,28,.05)}
+.imp-top{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.imp-ic{width:42px;height:42px;border-radius:12px;background:#E4F6EA;color:#0F7A43;display:grid;place-items:center;flex-shrink:0}.imp-ic svg{width:24px;height:24px}
+.imp-t b{display:block;font:600 16px 'Oswald',sans-serif}.imp-t span{font-size:12px;color:var(--muted)}
+.imp-drop{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;border:2px dashed #9FD3B5;background:#F3FBF6;border-radius:14px;padding:18px 12px;cursor:pointer;color:#0B3D22}
+.imp-drop svg{width:30px;height:30px;color:#0F7A43}.imp-drop b{font-size:13.5px}.imp-drop small{font-size:10.5px;color:var(--muted);line-height:1.4}
+.imp-drop.over{background:#DDF3E5;border-color:#0F7A43}
+.imp-btns{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.imp-ov{position:fixed;inset:0;background:rgba(10,30,20,.55);display:none;align-items:flex-end;justify-content:center;z-index:300}
+.imp-modal{background:#fff;width:100%;max-width:620px;max-height:88vh;border-radius:18px 18px 0 0;display:flex;flex-direction:column}
+.imp-mh{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}.imp-mh b{font:600 17px 'Oswald',sans-serif}
+.imp-x{border:0;background:none;font-size:26px;line-height:1;cursor:pointer;color:var(--muted)}
+.imp-mb{padding:14px 16px;overflow:auto;flex:1;font-size:13px}
+.imp-mf{display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}.imp-go{flex:1;padding:12px !important}
+.imp-sum{display:flex;gap:8px;margin-bottom:12px}.imp-sum div{flex:1;background:#E4F6EA;border-radius:12px;padding:10px;text-align:center}.imp-sum b{display:block;font:700 20px 'Oswald',sans-serif;color:#0B3D22}.imp-sum span{font-size:11px;color:var(--muted)}
+.imp-sum div.w{background:#FDEBEC}.imp-sum div.w b{color:#B3261E}
+.imp-g{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.imp-g>div:first-child{display:flex;justify-content:space-between;gap:8px;background:#F3FBF6;padding:9px 12px;font-weight:600}.imp-g small{color:var(--muted);font-weight:400}
+.imp-g ul{margin:0;padding:8px 12px 8px 28px;font-size:12px;color:var(--ink)}
+.imp-tag{font-size:10.5px;border-radius:20px;padding:2px 8px;background:#DDF3E5;color:#146C43;white-space:nowrap}.imp-tag.new{background:#E2EEFB;color:#2F6DB5}
+.imp-err{background:#FDEBEC;border-radius:12px;padding:10px 12px;margin-top:10px;font-size:12px;color:#8E2A22}.imp-err li{margin-left:16px}
 </style>
 </head>
 <body>
@@ -745,14 +882,17 @@
 </div>
   <div class="wrap">
     <div class="app-header">
-      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span class="notif-badge" id="notifBadge" style="display:none;">0</span>
-      </button>
+      <div class="app-logo-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="4.5" r="2"/><path d="M5 12l4-3 3 2 2-3 4 4M12 11l-2 5-4 4M12 14l3 3 1 4"/></svg></div>
       <div class="who">
-        <div class="name" id="headerName">-</div>
+        <div class="app-title">DuoFit Coach</div>
+        <div class="who-sub">Pembinaan Atlet UKM Pagar Nusa</div>
+        <div class="name" id="headerName" style="display:none">-</div>
         <span class="role-badge" id="headerRole">-</span>
       </div>
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Notifikasi &amp; menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17h12l-1.5-2V10a4.5 4.5 0 00-9 0v5zM10 20a2 2 0 004 0"/></svg>
+        <span class="notif-badge" id="notifBadge" style="display:none;">0</span>
+      </button>
+      <button class="hamburger-btn" id="gearBtn" aria-label="Pengaturan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg></button>
     </div>
 
     <div id="drawerOverlay" class="drawer-overlay" style="display:none">
@@ -918,32 +1058,39 @@ Daya tahan: Aerobik → lanjutan"></textarea>
     </div>
 
     <div class="tabs">
-      <button class="tab-btn" data-tab="dashboard" id="dashboardTabBtn" style="display:none">Dashboard</button>
+      <button class="tab-btn" data-tab="dashboard" id="dashboardTabBtn" style="display:none">Evaluasi</button>
       <button class="tab-btn" data-tab="athletes" id="athletesTabBtn" style="display:none">Atlet</button>
       <button class="tab-btn active" data-tab="tasks">Tugas</button>
       <button class="tab-btn" data-tab="program">Program Latihan</button>
     </div>
 
     <div class="tab-panel" id="tab-dashboard">
-      <div class="section-card">
-        <div class="section-title" id="dashGreeting">Selamat datang</div>
-        <div class="section-sub">Pantau progres. Bangun performa. Raih prestasi.</div>
-        <div class="quote-banner" id="coachQuoteBanner"></div>
+      <div class="ev-head"><h2>Evaluasi</h2><p>Pantau progres, analisis hasil, dan rencanakan langkah berikutnya.</p></div>
+      <div class="ev-hero">
+        <div class="hi"><div class="section-title" id="dashGreeting">Selamat datang</div>
+          <div class="section-sub" style="margin:0">Berikut ringkasan evaluasi program latihan minggu ini.</div>
+          <div class="quote-banner" id="coachQuoteBanner"></div></div>
+        <button type="button" class="ev-week" id="evWeek" data-ev="all"><b>Minggu ke-1</b><span>-</span></button>
       </div>
+      <div id="evalTop"></div>
+      <div class="section-card abs-card" id="dashJoinCodeCard" style="display:none;">
+        <div class="abs-top"><div class="abs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.5 14l2.5 2.5 4.5-5"/></svg></div>
+          <div class="abs-t"><b>Absensi &amp; Kehadiran Latihan</b>Atlet scan QR ini untuk terhubung ke kamu.</div>
+          <button type="button" class="pill-btn" data-ev="att">Lihat Detail ›</button></div>
+        <div class="abs-body">
+          <div class="qr-wrap"><img id="dashJoinQr" src="" alt="QR kode gabung"></div>
+          <div class="join-code-display" id="dashJoinCode">-</div>
+          <div class="abs-btns"><button type="button" id="dashCopyJoinCodeBtn" class="pill-btn">📋 Salin Kode</button><button type="button" id="absShareBtn" class="pill-btn">Bagikan</button></div>
+        </div>
+      </div>
+      <div id="evalBottom"></div>
+      <div class="ev-sep">Ringkasan Lainnya</div>
 
       <div class="section-card" id="todayCard">
         <div class="section-title">📊 Kondisi Program Hari Ini</div>
         <div class="section-sub" id="todayDate"></div>
         <div class="today-status" id="todayStatus"></div>
         <div class="today-grid" id="todayGrid"></div>
-      </div>
-
-      <div class="section-card" id="dashJoinCodeCard" style="display:none;">
-        <div class="section-title">🔑 Kode Gabung Atletmu</div>
-        <div class="section-sub">Bagikan kode ini ke atlet — mereka masukkan saat mendaftar supaya otomatis terhubung ke kamu. Bisa juga scan QR, kode langsung terisi otomatis.</div>
-        <div class="join-code-display" id="dashJoinCode">-</div>
-        <div class="qr-wrap"><img id="dashJoinQr" src="" alt="QR kode gabung"></div>
-        <button type="button" id="dashCopyJoinCodeBtn" class="edit-cancel-btn" style="width:100%;">📋 Salin Kode</button>
       </div>
 
       <div class="dash-grid" id="dashStats"></div>
@@ -984,25 +1131,30 @@ Daya tahan: Aerobik → lanjutan"></textarea>
 
     <div class="tab-panel active" id="tab-tasks">
       <div id="coachTaskArea" style="display:none">
-        <div class="section-card">
-          <div class="section-title">Buat Tugas Baru</div>
-          <div class="section-sub">Tugas bisa ditujukan ke satu atlet atau semua atlet sekaligus.</div>
-          <form class="task-form" id="taskForm">
-            <input type="text" id="taskTitle" placeholder="Judul tugas (mis. Lari 5km)" maxlength="90" required>
-            <textarea id="taskDesc" placeholder="Deskripsi / instruksi (opsional)" maxlength="300"></textarea>
-            <select id="taskTarget"><option value="all">Semua Atlet</option></select>
-            <input type="date" id="taskDue">
-            <input type="number" id="taskDuration" placeholder="Estimasi durasi (menit, opsional)" min="1">
-            <button type="submit">+ Kirim Tugas</button>
+        <div class="tk-form-card">
+          <div class="tk-banner"><div class="tk-bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.5 14l2.5 2.5 4.5-5"/></svg></div>
+            <div><b>Buat Tugas Baru</b><span>Atur tugas latihan, teknik, atau pembinaan untuk atlet.</span></div></div>
+          <form class="task-form tk-form" id="taskForm">
+            <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8zM14 3v5h5M9 13h6M9 17h4"/></svg></div><div class="fb"><label for="taskTitle">Judul Tugas *</label><input type="text" id="taskTitle" placeholder="Contoh: Latihan teknik jurus dasar" maxlength="90" required></div></div>
+            <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></svg></div><div class="fb"><label for="taskDesc">Deskripsi / Instruksi</label><textarea id="taskDesc" placeholder="Jelaskan tujuan, langkah-langkah, atau hal yang perlu diperhatikan..." maxlength="300"></textarea><div class="cnt" id="taskDescCnt">0/300</div></div></div>
+            <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 5 2 5 5"/></svg></div><div class="fb"><label for="taskTarget">Pilih Atlet</label><div class="trow"><select id="taskTarget"><option value="all">Semua Atlet</option></select><button type="button" class="all-chip on" id="taskAllChip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>Semua Atlet <em>✓</em></button></div></div></div>
+            <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></div><div class="fb two"><div><label for="taskDue">Tenggat</label><input type="date" id="taskDue"></div><div><label for="taskDuration">Estimasi Durasi (menit)</label><input type="number" id="taskDuration" placeholder="Contoh: 60" min="1"></div></div></div>
+            <button type="submit" class="tk-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg>Kirim Tugas ›</button>
           </form>
         </div>
-        <div class="section-card">
-          <div class="section-title">Daftar Atlet</div>
-          <div id="athleteList"><div class="empty-msg">Memuat...</div></div>
-        </div>
-        <div class="section-card">
-          <div class="section-title">Tugas yang Diberikan</div>
+
+        <div class="tk-active">
+          <div class="tk-ah"><div class="tk-ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.5 14l2.5 2.5 4.5-5"/></svg></div><div class="grow"><b>Tugas Aktif</b><span>Ringkasan tugas yang sedang berjalan.</span></div>
+            <select id="taskPeriod" class="tk-period"><option value="all">Semua waktu</option><option value="week">Minggu ini</option><option value="month">Bulan ini</option></select></div>
+          <div class="tk-kpis" id="taskKpis"></div>
+          <div class="tk-lt">Daftar Tugas Aktif <button type="button" class="tk-clear" id="taskClearFilter" style="display:none">Hapus filter ✕</button></div>
           <div id="coachTaskList"><div class="empty-msg">Memuat...</div></div>
+        </div>
+
+        <div class="section-card tk-atl">
+          <div class="tk-ah" style="margin-bottom:10px"><div class="grow"><b>Daftar Atlet</b><span>Kelola atlet dan penugasan.</span></div><button type="button" class="pill-btn" id="athleteToggleBtn">Semua Atlet ›</button></div>
+          <div class="tk-tiles" id="athleteTiles"></div>
+          <div id="athleteList" style="display:none;margin-top:12px"><div class="empty-msg">Memuat...</div></div>
         </div>
       </div>
       <div id="athleteTaskArea" style="display:none">
@@ -1067,6 +1219,18 @@ Daya tahan: Aerobik → lanjutan"></textarea>
       </div>
 
       <div class="phase-nav" id="phaseNav"></div>
+      <div class="imp-card" id="importCard" style="display:none">
+        <div class="imp-top"><div class="imp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8zM14 3v5h5M12 18v-6M9.5 14.5L12 12l2.5 2.5"/></svg></div>
+          <div class="imp-t"><b>Import Program dari Excel</b><span>Unggah file .xlsx, .xls, .csv, atau .ods. Fase, program, dan sesi langsung terbuat.</span></div></div>
+        <label class="imp-drop" id="impDrop"><input type="file" id="impFile" accept=".xlsx,.xls,.csv,.ods,.tsv" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5M8 9l4-4 4 4M5 19h14"/></svg><b>Pilih file atau tarik ke sini</b><small>Kolom: Fase, Program, Tujuan Latihan, Tanggal, Jenis, Durasi, Volume, Intensitas, Frekuensi, RPE, Target Kehadiran, Catatan</small></label>
+        <div class="imp-btns"><button type="button" class="pill-btn" id="impTemplate">⬇ Unduh Template Excel</button></div>
+      </div>
+      <div class="imp-ov" id="impOverlay"><div class="imp-modal">
+        <div class="imp-mh"><b>Pratinjau Import</b><button type="button" class="imp-x" id="impClose" aria-label="Tutup">&times;</button></div>
+        <div class="imp-mb" id="impBody"></div>
+        <div class="imp-mf"><button type="button" class="pill-btn" id="impCancel">Batal</button><button type="button" class="tk-send imp-go" id="impGo">Impor Sekarang</button></div>
+      </div></div>
       <div id="phaseList"></div>
       <button type="button" class="fab-top" id="fabTop" aria-label="Ke atas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
     </div>
@@ -1079,6 +1243,7 @@ Daya tahan: Aerobik → lanjutan"></textarea>
 <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
 /* ======================================================================
    GANTI BAGIAN INI dengan config dari Firebase Console kamu sendiri:
@@ -2162,6 +2327,7 @@ function renderAthleteList(){
     </div>
   `;
   }).join('') : '<div class="empty-msg">Belum ada atlet yang mendaftar.</div>';
+  renderTaskPanel();
   renderDashboard();
 }
 
@@ -2180,8 +2346,11 @@ document.getElementById('athleteList').addEventListener('click', async (e)=>{
 
 function renderCoachTasks(){
   const el = document.getElementById('coachTaskList');
-  if(!tasksCache.length){ el.innerHTML = '<div class="empty-msg">Belum ada tugas dibuat.</div>'; return; }
-  el.innerHTML = tasksCache.map(t=>{
+  if(!tasksCache.length){ el.innerHTML = '<div class="empty-msg">Belum ada tugas dibuat.</div>'; renderTaskPanel(); return; }
+  const _rows = taskRowsFiltered();
+  renderTaskPanel();
+  if(!_rows.length){ el.innerHTML = '<div class="empty-msg">Tidak ada tugas untuk filter ini.</div>'; return; }
+  el.innerHTML = _rows.map(t=>{
     const targetLabel = t.assignedTo === 'all' ? 'Semua Atlet' : (athletesCache.find(a=>a.uid===t.assignedTo)?.name || 'Atlet');
     const relevantAthletes = t.assignedTo === 'all' ? athletesCache : athletesCache.filter(a=>a.uid===t.assignedTo);
     const comps = taskCompletionsCache[t.id] || {};
@@ -2190,18 +2359,26 @@ function renderCoachTasks(){
       const c = comps[a.uid];
       return `<div class="recap-row"><span class="recap-name">${escapeHtml(a.name||a.email)}${c&&c.note?(' — <i>'+escapeHtml(c.note)+'</i>'):''}${c&&c.photo?' — <button class="recap-photo-btn" data-action="viewphoto" data-src="'+c.photo+'">📷 lihat foto</button>':''}</span><span class="recap-frac">${c&&c.done?'✓ Selesai':'Belum'}</span></div>`;
     }).join('') || '<div class="empty-msg">Belum ada atlet.</div>';
+    const info = taskInfo(t, relevantAthletes, comps);
+    const dueTxt = t.dueDate ? new Date(t.dueDate+'T00:00:00').toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) : 'Tanpa tenggat';
     return `
-      <div class="task-card">
-        <div class="task-top">
-          <div>
-            <div class="task-title">${escapeHtml(t.title)}</div>
-            <div class="task-target">Untuk: ${escapeHtml(targetLabel)} · ${doneCount}/${relevantAthletes.length} selesai</div>
+      <div class="tk-item" id="tki-${t.id}">
+        <div class="tk-row">
+          <div class="tk-ic">${TKI.run}</div>
+          <div class="tk-main">
+            <div class="tk-title">${escapeHtml(t.title)}</div>
+            <div class="tk-meta">${TKI.users}${relevantAthletes.length} atlet · ${escapeHtml(targetLabel)}${t.duration?' · '+t.duration+' mnt':''}</div>
+            <div class="tk-meta">${TKI.cal}${escapeHtml(dueTxt)}</div>
           </div>
-          <button class="task-del" data-action="deltask" data-id="${t.id}">&times;</button>
+          <div class="tk-side"><span class="tk-chip ${info.cls}">${info.label}</span>
+            <div class="tk-prog"><div class="bar"><i style="width:${info.pct}%"></i></div><b>${info.pct}%</b></div></div>
+          <button class="tk-btn" data-action="toggletask" data-id="${t.id}" title="Lihat detail" aria-label="Lihat detail">${TKI.eye}</button>
+          <button class="tk-btn more" data-action="deltask" data-id="${t.id}" title="Hapus tugas" aria-label="Hapus tugas">&#8942;</button>
         </div>
-        ${t.desc ? '<div class="task-desc">'+escapeHtml(t.desc)+'</div>' : ''}
-        ${t.dueDate ? '<div class="task-due">Tenggat: '+escapeHtml(formatDateShort(t.dueDate)||t.dueDate)+'</div>' : ''}
-        <div class="task-status">${recapHtml}</div>
+        <div class="tk-detail">
+          ${t.desc ? '<div class="task-desc">'+escapeHtml(t.desc)+'</div>' : ''}
+          <div class="task-status">${recapHtml}</div>
+        </div>
       </div>
     `;
   }).join('');
@@ -3777,6 +3954,288 @@ function renderProgramTab(){
   const fab=document.getElementById('fabTop');
   window.addEventListener('scroll',()=>{ fab.style.display=(tp.classList.contains('active')&&window.scrollY>600)?'grid':'none'; },{passive:true});
   fab.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+})();
+
+/* ================= Evaluasi ================= */
+const EV = {
+ heart:IC.heart.replace(' class="ic"',''),
+ cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>',
+ ok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>',
+ gauge:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 17a8 8 0 1116 0"/><path d="M12 17l4-5"/></svg>',
+ timer:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l2 2M9 3h6"/></svg>',
+ layers:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg>',
+ clip:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg>',
+ bulb:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></svg>',
+ chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 20V11M12 20V5M19 20v-7"/></svg>',
+ trend:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>'
+};
+const pn=v=>{const n=parseFloat(String(v==null?'':v).replace(',','.'));return isNaN(n)?null:n;};
+const avgOf=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+const f1=n=>n==null?'-':(Math.round(n*10)/10).toString().replace('.',',');
+function evalData(){
+  const all=[]; programsCache.forEach(pr=>(pr.sessions||[]).forEach(x=>all.push(Object.assign({},x,{_pn:pr.name,_st:sessionStatus(x)}))));
+  const now=new Date(), mon=new Date(now); mon.setDate(now.getDate()-((now.getDay()+6)%7)); mon.setHours(0,0,0,0);
+  const sun=new Date(mon); sun.setDate(mon.getDate()+6);
+  const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  let wk=all.filter(x=>x.date&&x.date>=iso(mon)&&x.date<=iso(sun)), scope='minggu ini';
+  if(!wk.length&&all.length){wk=all;scope='semua periode';}
+  const ds=all.map(x=>x.date).filter(Boolean).sort(); let wn=1;
+  if(ds.length){const f=new Date(ds[0]+'T00:00:00'); f.setDate(f.getDate()-((f.getDay()+6)%7)); wn=Math.max(1,Math.floor((mon-f)/6048e5)+1);}
+  return {all,wk,scope,mon,sun,wn};
+}
+function evalCalc(){
+  const E=evalData(), wk=E.wk, n=wk.length;
+  const done=wk.filter(x=>x._st==='selesai').length, bad=wk.filter(x=>x._st==='batal').length;
+  const ex=wk.reduce((a,x)=>a+(x.expected>0?x.expected:0),0), pr=wk.reduce((a,x)=>a+(x.expected>0?(x.present||0):0),0);
+  const both=(k1,k2,conv)=>{const c=conv||pn;const r=wk.filter(x=>c(x[k1])>0&&c(x[k2])!=null&&c(x[k2])>=0);return {p:avgOf(r.map(x=>c(x[k1]))),a:avgOf(r.map(x=>c(x[k2])))};};
+  const dur=both('duration','aDuration'), vol=both('volume','aVolume'), inten=both('intensity','aIntensity'), rpe=both('rpe','aRpe');
+  const lv=wk.filter(x=>x.volume||x.aVolume).sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
+  const ratio=(m)=>m.p>0&&m.a!=null?Math.round(m.a/m.p*100):null;
+  const rpeR=rpe.p>0&&rpe.a>0?Math.round(Math.min(rpe.p,rpe.a)/Math.max(rpe.p,rpe.a)*100):null;
+  return Object.assign(E,{n,done,bad,ex,pr,dur,vol,inten,rpe,lv,
+    pDone:n?Math.round(done/n*100):0, pAtt:ex?Math.round(pr/ex*100):0, pBad:n?Math.round(bad/n*100):0,
+    rDur:ratio(dur), rVol:ratio(vol), rInt:ratio(inten), rRpe:rpeR, rAtl:ex?Math.round(pr/ex*100):null});
+}
+function renderEvaluasi(){
+  if(!currentProfile||currentProfile.role!=='coach') return;
+  const top=document.getElementById('evalTop'), bot=document.getElementById('evalBottom'); if(!top||!bot) return;
+  const C=evalCalc(); window._ev=C;
+  const fm=d=>d.toLocaleDateString('id-ID',{day:'numeric',month:'long'});
+  const wkEl=document.getElementById('evWeek');
+  wkEl.innerHTML='<b>Minggu ke-'+C.wn+'</b><span>'+fm(C.mon)+' – '+fm(C.sun)+' '+C.sun.getFullYear()+'</span>';
+  const card=(kind,ic,title,l1,l2,pc,inv)=>'<button type="button" class="ev-card'+(inv?' badc':'')+'" data-ev="'+kind+'"><div class="t">'+EV[ic]+'<div class="n">'+title+'<small>'+l1+'<br>'+l2+'</small></div><span class="pc'+(inv?' bad':'')+'">'+(pc==null?'-':pc+'%')+'</span></div><div class="bar"><i style="width:'+Math.min(100,pc||0)+'%"></i></div></button>';
+  const kp=(cls,ic,v,l,c,kind)=>'<button type="button" class="ev-k '+cls+'" data-ev="'+kind+'">'+EV[ic]+'<div class="v">'+v+'</div><div class="l">'+l+'</div><div class="c">'+c+'</div></button>';
+  const volP=C.lv?escapeHtml(C.lv.volume||'-'):f1(C.vol.p), volA=C.lv?escapeHtml(C.lv.aVolume||'-'):f1(C.vol.a);
+  let note=['Belum ada data realisasi.','Isi realisasi sesi di tab Program Latihan agar evaluasi muncul di sini.'];
+  if(C.rpe.a!=null&&C.rpe.p!=null&&C.rpe.a>C.rpe.p+0.5) note=['RPE realisasi lebih tinggi dari rencana ('+f1(C.rpe.a)+' vs '+f1(C.rpe.p)+').','Fokus pada pemulihan dan hindari peningkatan beban terlalu cepat.'];
+  else if(C.rDur!=null&&C.rDur<85) note=['Durasi latihan terealisasi hanya '+C.rDur+'% dari rencana.','Periksa kendala jadwal atau sesuaikan rencana durasi minggu berikutnya.'];
+  else if(C.bad>0) note=[C.bad+' program tidak terlaksana '+C.scope+'.','Jadwalkan ulang agar siklus latihan tidak terputus.'];
+  else if(C.n>0) note=['Pelaksanaan program '+C.scope+' berjalan sesuai rencana.','Pertahankan konsistensi dan pantau kelelahan atlet.'];
+  top.innerHTML='<div class="ev-sec">'+EV.chart+'<div><b>Evaluasi Program Latihan</b><span>Rekapitulasi pelaksanaan program ('+C.scope+').</span></div></div>'+
+   '<div class="ev-kpis">'+kp('red','cal',C.n,'Program Direncanakan','('+C.scope+')','plan')+kp('amber','ok',C.done,'Program Terlaksana','('+C.pDone+'%)','done')+
+   kp('grn','clip',C.pr+'/'+C.ex,'Rata-rata Kehadiran','('+C.pAtt+'%)','att')+kp('blu','gauge',f1(C.rpe.a),'Rata-rata RPE','(Skala 1–10)','rpe')+'</div>'+
+   '<div class="ev-m">'+
+   card('dur','timer','Durasi Latihan','Rencana <b>'+f1(C.dur.p)+' menit</b>','Realisasi <b>'+f1(C.dur.a)+' menit</b>',C.rDur)+
+   card('vol','layers','Volume Latihan','Rencana <b>'+volP+'</b>','Realisasi <b>'+volA+'</b>',C.rVol)+
+   card('int','gauge','Intensitas','Rencana <b>'+f1(C.inten.p)+'</b>','Realisasi <b>'+f1(C.inten.a)+'</b>',C.rInt)+
+   card('rpe','heart','RPE','Rencana <b>'+f1(C.rpe.p)+'</b>','Realisasi <b>'+f1(C.rpe.a)+'</b>',C.rRpe)+
+   card('atl','clip','Jumlah Atlet','Rencana <b>'+C.ex+'</b>','Realisasi <b>'+C.pr+'</b>',C.rAtl)+
+   card('bad','clip','Program Tidak Terlaksana','<b>'+C.bad+'</b> dari '+C.n+' program','&nbsp;',C.pBad,true)+'</div>'+
+   '<button type="button" class="ev-note" data-ev="note">'+EV.bulb+'<div style="flex:1"><b>Catatan Evaluasi</b><span>'+note[0]+' '+note[1]+'</span></div>'+IC.chev.replace('class="chev"','style="width:16px;height:16px"')+'</button>';
+  const KW={'Daya Tahan':['daya tahan','endurance','aerob'],'Kekuatan':['kekuatan','strength'],'Kecepatan':['kecepatan','speed'],'Mobilitas':['mobilitas','fleksibilitas','mobility']};
+  const comp=Object.keys(KW).map(k=>{let t=0,d=0;programsCache.forEach(pr=>{if(KW[k].some(w=>(pr.name||'').toLowerCase().includes(w)))(pr.sessions||[]).forEach(x=>{t++;if(sessionStatus(x)==='selesai')d++;});});return {k,t,d,pc:t?Math.round(d/t*100):0};});
+  const ci={'Daya Tahan':'run','Kekuatan':'dumb','Kecepatan':'run','Mobilitas':'run'};
+  bot.innerHTML='<div class="ev-sec">'+EV.trend+'<div class="grow"><b>Progress Program Latihan</b><span>Perbandingan rencana vs realisasi.</span></div><button type="button" class="pill-btn" data-ev="chart">Lihat Grafik ›</button></div>'+
+   '<div class="ev-prog">'+comp.map(c=>'<button type="button" class="ev-card" data-ev="comp:'+c.k+'"><div class="t">'+IC[ci[c.k]].replace('<svg','<svg class="pi"')+'<div class="n">'+c.k+'</div></div><div class="row"><span>Pencapaian</span><b>'+c.pc+'%</b></div><div class="bar"><i style="width:'+c.pc+'%"></i></div></button>').join('')+'</div>';
+}
+function evalDetail(kind){
+  const C=window._ev||evalCalc(), ov=document.getElementById('dashDetailOverlay'); if(!ov) return;
+  if(kind==='chart'){ document.querySelector('.tab-btn[data-tab="program"]').click(); setTimeout(()=>{const w=document.getElementById('weeklySection'); if(w) w.scrollIntoView({behavior:'smooth'});},120); return; }
+  let rows=C.wk, title='Rincian Evaluasi';
+  if(kind.startsWith('comp:')){ const k=kind.slice(5).toLowerCase(); title='Program '+kind.slice(5); rows=C.all.filter(x=>(x._pn||'').toLowerCase().includes(k.split(' ')[0])); }
+  else if(kind==='att') title='Kehadiran Latihan';
+  else if(kind==='done') {title='Program Terlaksana'; rows=rows.filter(x=>x._st==='selesai');}
+  else if(kind==='bad') {title='Program Tidak Terlaksana'; rows=rows.filter(x=>x._st==='batal');}
+  else if(kind==='note') title='Catatan Evaluasi';
+  const line=x=>{
+    const bits=[sessionStatusLabel(x._st)];
+    if(x.date) bits.push(formatDateShort(x.date)||x.date);
+    if(kind==='att'&&x.expected>0) bits.push('hadir '+(x.present||0)+'/'+x.expected);
+    else{ if(x.duration||x.aDuration) bits.push('durasi '+(x.duration||'-')+'→'+(x.aDuration||'-'));
+      if(x.rpe||x.aRpe) bits.push('RPE '+(x.rpe||'-')+'→'+(x.aRpe||'-')); }
+    return '<div class="detail-row"><div class="k">'+escapeHtml(x._pn||'-')+'</div><div>'+escapeHtml(bits.join(' · '))+'</div></div>';
+  };
+  document.getElementById('dashDetailTitle').textContent=title;
+  document.getElementById('dashDetailContent').innerHTML='<div class="ev-list">'+(rows.length?rows.map(line).join(''):'<div class="empty-msg">Belum ada sesi untuk ditampilkan.</div>')+'</div>';
+  ov.style.display='flex';
+}
+(function(){
+  const dp=document.getElementById('tab-dashboard');
+  dp.addEventListener('click',e=>{ const b=e.target.closest('[data-ev]'); if(b) evalDetail(b.dataset.ev); });
+  const sh=document.getElementById('absShareBtn');
+  sh.addEventListener('click',async()=>{
+    const code=document.getElementById('dashJoinCode').textContent, url=location.origin+location.pathname+'?join='+code;
+    try{ if(navigator.share) await navigator.share({title:'DuoFit Coach',text:'Kode gabung atlet: '+code,url}); else { await navigator.clipboard.writeText(url); sh.textContent='✓ Link tersalin'; setTimeout(()=>sh.textContent='Bagikan',1500);} }catch(_){}
+  });
+  const _rd=renderDashboard;
+  renderDashboard=function(){ _rd.apply(this,arguments); try{ renderEvaluasi(); }catch(err){ console.error(err); } };
+})();
+
+/* ================= Tugas: panel baru ================= */
+const TKI={
+ run:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="4.5" r="2"/><path d="M5 12l4-3 3 2 2-3 4 4M12 11l-2 5-4 4M12 14l3 3 1 4"/></svg>',
+ users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>',
+ cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>',
+ eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+ chev:'<svg class="ch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>'
+};
+let taskStatusFilter='', taskPeriodFilter='all';
+function taskInfo(t, rel, comps){
+  const total=rel.length, done=rel.filter(a=>comps[a.uid]&&comps[a.uid].done).length;
+  const pct=total?Math.round(done/total*100):0;
+  const todayIso=new Date().toISOString().slice(0,10);
+  let k='belum',label='Belum Dikerjakan',cls='belum';
+  if(total&&done===total){k='selesai';label='Selesai';cls='selesai';}
+  else if(done>0){k='proses';label='Sedang Dikerjakan';cls='proses';}
+  else if(t.dueDate&&t.dueDate>todayIso){label='Terjadwal';cls='jadwal';}
+  return {k,label,cls,pct,done,total};
+}
+function taskRelevant(t){ return t.assignedTo==='all'?athletesCache:athletesCache.filter(a=>a.uid===t.assignedTo); }
+function taskInPeriod(t){
+  if(taskPeriodFilter==='all') return true; if(!t.dueDate) return false;
+  const n=new Date(), iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  if(taskPeriodFilter==='month') return t.dueDate.slice(0,7)===iso(n).slice(0,7);
+  const mon=new Date(n); mon.setDate(n.getDate()-((n.getDay()+6)%7)); const sun=new Date(mon); sun.setDate(mon.getDate()+6);
+  return t.dueDate>=iso(mon)&&t.dueDate<=iso(sun);
+}
+function taskRowsFiltered(){
+  return tasksCache.filter(taskInPeriod).filter(t=>!taskStatusFilter||taskInfo(t,taskRelevant(t),taskCompletionsCache[t.id]||{}).k===taskStatusFilter);
+}
+function renderTaskPanel(){
+  const kp=document.getElementById('taskKpis'); if(!kp) return;
+  const inP=tasksCache.filter(taskInPeriod), c={belum:0,proses:0,selesai:0};
+  inP.forEach(t=>{c[taskInfo(t,taskRelevant(t),taskCompletionsCache[t.id]||{}).k]++;});
+  const k=(key,cls,ic,v,l)=>'<button type="button" class="tk-k '+cls+(taskStatusFilter===key?' sel':'')+'" data-tf="'+key+'"><div class="ki">'+ic+'</div><div class="v">'+v+'</div><div class="l">'+l+'</div>'+TKI.chev+'</button>';
+  const S=d=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>';
+  kp.innerHTML=k('belum','r',S('<path d="M12 7v6M12 17h.01"/>'),c.belum,'Belum Dikerjakan')+k('proses','y',S('<path d="M12 8v5l3 2"/>'),c.proses,'Sedang Dikerjakan')+k('selesai','g',S('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),c.selesai,'Selesai')+k('','n',S('<path d="M8 7h10M8 12h10M8 17h10"/>'),inP.length,'Total Tugas');
+  document.getElementById('taskClearFilter').style.display=taskStatusFilter?'inline':'none';
+  const assigned=new Set(); tasksCache.forEach(t=>{ if(t.assignedTo==='all') athletesCache.forEach(a=>assigned.add(a.uid)); else assigned.add(t.assignedTo); });
+  const nAs=athletesCache.filter(a=>assigned.has(a.uid)).length;
+  const big='<svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 5 2 5 5"/></svg>';
+  const one='<svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>';
+  const go='<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>';
+  document.getElementById('athleteTiles').innerHTML='<button type="button" class="tk-tile" data-tile="all">'+big+'<div><small>Total Atlet</small><b>'+athletesCache.length+'</b></div>'+go+'</button><button type="button" class="tk-tile" data-tile="assigned">'+one+'<div><small>Atlet Ditugaskan</small><b>'+nAs+'</b></div>'+go+'</button>';
+}
+(function(){
+  const area=document.getElementById('coachTaskArea');
+  area.addEventListener('click',e=>{
+    const f=e.target.closest('[data-tf]'); if(f){ taskStatusFilter=(taskStatusFilter===f.dataset.tf)?'':f.dataset.tf; renderCoachTasks(); return; }
+    if(e.target.closest('#taskClearFilter')){ taskStatusFilter=''; renderCoachTasks(); return; }
+    const tg=e.target.closest('[data-action="toggletask"]'); if(tg){ const it=document.getElementById('tki-'+tg.dataset.id); if(it) it.classList.toggle('open'); return; }
+    if(e.target.closest('#athleteToggleBtn')||e.target.closest('[data-tile]')){
+      const l=document.getElementById('athleteList'), show=l.style.display==='none'; l.style.display=show?'block':'none';
+      document.getElementById('athleteToggleBtn').textContent=show?'Sembunyikan ‹':'Semua Atlet ›'; if(show) l.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+    if(e.target.closest('#taskAllChip')){ const sel=document.getElementById('taskTarget'); sel.value='all'; sel.dispatchEvent(new Event('change')); }
+  });
+  document.getElementById('taskPeriod').addEventListener('change',e=>{ taskPeriodFilter=e.target.value; renderCoachTasks(); });
+  const sel=document.getElementById('taskTarget'), chip=document.getElementById('taskAllChip');
+  sel.addEventListener('change',()=>chip.classList.toggle('on',sel.value==='all'));
+  const d=document.getElementById('taskDesc'), cnt=document.getElementById('taskDescCnt');
+  d.addEventListener('input',()=>cnt.textContent=d.value.length+'/300');
+  document.getElementById('taskForm').addEventListener('reset',()=>setTimeout(()=>{cnt.textContent='0/300';chip.classList.toggle('on',sel.value==='all');},0));
+  document.getElementById('gearBtn').addEventListener('click',()=>document.getElementById('drawerSettings').click());
+  const ti={dashboard:'<path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/>',athletes:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 5 2 5 5"/>',tasks:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.5 14l2.5 2.5 4.5-5"/>',program:'<path d="M2 10v4M5 7v10M19 7v10M22 10v4M5 12h14"/>'};
+  document.querySelectorAll('.tab-btn[data-tab]').forEach(b=>{ if(ti[b.dataset.tab]&&!b.querySelector('svg')) b.insertAdjacentHTML('afterbegin','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">'+ti[b.dataset.tab]+'</svg>'); });
+})();
+
+/* ================= Import Excel ================= */
+(function(){
+  const $=id=>document.getElementById(id);
+  const norm=v=>String(v==null?'':v).toLowerCase().replace(/[^a-z0-9]/g,'');
+  const HEAD={fase:['fase','phase'],program:['program','namaprogram'],target:['tujuan','tujuanlatihan','sesi','namasesi','latihan'],date:['tanggal','tgl','date','jadwal'],type:['jenis','tipe','jenislatihan'],
+    duration:['durasi','durasimenit','durasirencana'],volume:['volume','volumelatihan'],intensity:['intensitas','intensitasrencana'],frequency:['frekuensi'],rpe:['rpe'],expected:['targetkehadiran','kehadiran','jumlahatlet'],note:['catatan','keterangan','note']};
+  function colMap(keys){
+    const m={}; keys.forEach(k=>{ const n=norm(k); for(const f in HEAD){ if(!m[f]&&HEAD[f].some(h=>n===h||(h.length>4&&n.startsWith(h)))){m[f]=k;break;} } }); return m;
+  }
+  function phaseOf(v){
+    const n=norm(v); if(!n) return null; const d=n.match(/\d+/);
+    if(d){ const i=parseInt(d[0],10); if(i>=1&&i<=PHASES.length&&n.replace(/\d|fase/g,'')==='') return PHASES[i-1]; }
+    if(n.includes('pra')) return PHASES.find(x=>x.id==='pra_kompetisi');
+    if(n.includes('khusus')) return PHASES.find(x=>x.id==='khusus');
+    if(n.includes('umum')) return PHASES.find(x=>x.id==='umum');
+    if(n.includes('kompetisi')||n.includes('turnamen')) return PHASES.find(x=>x.id==='kompetisi');
+    return PHASES.find(x=>norm(x.title)===n)||null;
+  }
+  function isoDate(v){
+    if(v===''||v==null) return '';
+    if(v instanceof Date&&!isNaN(v)) return v.getFullYear()+'-'+String(v.getMonth()+1).padStart(2,'0')+'-'+String(v.getDate()).padStart(2,'0');
+    if(typeof v==='number'&&v>20000){ const d=new Date(Math.round((v-25569)*864e5)); return d.toISOString().slice(0,10); }
+    const t=String(v).trim(); let m;
+    if((m=t.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/))) return m[1]+'-'+m[2].padStart(2,'0')+'-'+m[3].padStart(2,'0');
+    if((m=t.match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})/))) return m[3]+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0');
+    return '';
+  }
+  const numOf=v=>{ if(v===''||v==null) return ''; const n=parseFloat(String(v).replace(',','.').replace(/[^\d.\-]/g,'')); return isNaN(n)?'':n; };
+  let pending=null;
+  function parseRows(rows){
+    const groups=new Map(), errors=[]; if(!rows.length) return {groups,errors:['File kosong atau tidak ada baris data.'],total:0};
+    const cm=colMap(Object.keys(rows[0]));
+    if(!cm.fase||!cm.program||!cm.target) return {groups,errors:['Kolom wajib tidak ditemukan. Pastikan ada kolom: Fase, Program, dan Tujuan Latihan (gunakan template).'],total:0};
+    let total=0;
+    rows.forEach((r,i)=>{
+      const g=k=>cm[k]?r[cm[k]]:''; const line=i+2;
+      if(Object.values(r).every(v=>String(v).trim()==='')) return;
+      const ph=phaseOf(g('fase')), name=String(g('program')).trim(), goal=String(g('target')).trim();
+      if(!ph){ errors.push('Baris '+line+': fase "'+g('fase')+'" tidak dikenali.'); return; }
+      if(!name){ errors.push('Baris '+line+': nama program kosong.'); return; }
+      if(!goal){ errors.push('Baris '+line+': tujuan latihan kosong.'); return; }
+      const date=isoDate(g('date'));
+      const sess={id:uid(),target:goal,type:String(g('type')).trim(),duration:numOf(g('duration')),volume:String(g('volume')).trim(),intensity:numOf(g('intensity')),
+        frequency:String(g('frequency')).trim(),rpe:numOf(g('rpe')),expected:numOf(g('expected')),aDuration:'',aVolume:'',aIntensity:'',aRpe:'',present:'',
+        status:date?'rencana':'belum',achieved:false,date,note:String(g('note')).trim()};
+      const key=ph.id+'|'+name.toLowerCase(); if(!groups.has(key)) groups.set(key,{ph,name,sessions:[]});
+      groups.get(key).sessions.push(sess); total++;
+    });
+    return {groups,errors,total};
+  }
+  async function handleFile(file){
+    if(!file) return;
+    if(typeof XLSX==='undefined'){ alert('Library Excel belum termuat. Periksa koneksi internet lalu muat ulang halaman.'); return; }
+    try{
+      const wb=XLSX.read(await file.arrayBuffer(),{type:'array',cellDates:true});
+      const sh=wb.Sheets[wb.SheetNames.find(n=>!/petunjuk/i.test(n))||wb.SheetNames[0]];
+      const rows=XLSX.utils.sheet_to_json(sh,{defval:'',raw:true});
+      pending=parseRows(rows); showPreview(file.name);
+    }catch(e){ alert('Gagal membaca file: '+e.message); }
+  }
+  function showPreview(fname){
+    const P=pending, gs=[...P.groups.values()];
+    const exist=g=>programsCache.find(x=>x.phaseId===g.ph.id&&(x.name||'').toLowerCase()===g.name.toLowerCase());
+    $('impBody').innerHTML='<div class="section-sub" style="margin-bottom:10px">'+escapeHtml(fname)+'</div>'+
+      '<div class="imp-sum"><div><b>'+gs.length+'</b><span>Program</span></div><div><b>'+P.total+'</b><span>Sesi</span></div><div class="w"><b>'+P.errors.length+'</b><span>Dilewati</span></div></div>'+
+      gs.map(g=>'<div class="imp-g"><div><span>'+escapeHtml(g.ph.title)+' · '+escapeHtml(g.name)+'</span><span class="imp-tag'+(exist(g)?'':' new')+'">'+(exist(g)?'Gabung':'Baru')+' · '+g.sessions.length+' sesi</span></div><ul>'+
+        g.sessions.slice(0,4).map(x=>'<li>'+escapeHtml(x.target)+(x.date?' <small>('+x.date+')</small>':'')+'</li>').join('')+(g.sessions.length>4?'<li><small>+'+(g.sessions.length-4)+' sesi lainnya</small></li>':'')+'</ul></div>').join('')+
+      (P.errors.length?'<div class="imp-err"><b>Baris dilewati:</b><ul style="margin:6px 0 0;padding:0">'+P.errors.slice(0,8).map(e=>'<li>'+escapeHtml(e)+'</li>').join('')+(P.errors.length>8?'<li>+'+(P.errors.length-8)+' lainnya</li>':'')+'</ul></div>':'');
+    $('impGo').disabled=!P.total; $('impGo').textContent=P.total?'Impor '+P.total+' Sesi':'Tidak ada data valid';
+    $('impOverlay').style.display='flex';
+  }
+  const close=()=>{ $('impOverlay').style.display='none'; $('impFile').value=''; pending=null; };
+  $('impClose').onclick=close; $('impCancel').onclick=close;
+  $('impOverlay').addEventListener('click',e=>{ if(e.target===$('impOverlay')) close(); });
+  $('impFile').addEventListener('change',e=>handleFile(e.target.files[0]));
+  const dz=$('impDrop');
+  ['dragover','dragenter'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add('over');}));
+  ['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove('over');}));
+  dz.addEventListener('drop',e=>handleFile(e.dataTransfer.files[0]));
+  $('impGo').addEventListener('click',async()=>{
+    if(!pending||!pending.total) return; const btn=$('impGo'); btn.disabled=true; btn.textContent='Menyimpan...';
+    try{
+      for(const g of pending.groups.values()){
+        const ex=programsCache.find(x=>x.phaseId===g.ph.id&&(x.name||'').toLowerCase()===g.name.toLowerCase());
+        if(ex) await updateProgramSessions(ex.id,(ex.sessions||[]).concat(g.sessions));
+        else await dbf.collection('programs').add({phaseId:g.ph.id,name:g.name,sessions:g.sessions,coachUid:currentUser.uid});
+      }
+      const n=pending.total; close(); showCompletionToast('✓ '+n+' sesi berhasil diimpor');
+    }catch(e){ btn.disabled=false; btn.textContent='Coba lagi'; alert('Gagal mengimpor: '+e.message); }
+  });
+  $('impTemplate').addEventListener('click',()=>{
+    if(typeof XLSX==='undefined'){ alert('Library Excel belum termuat. Periksa koneksi internet.'); return; }
+    const H=['Fase','Program','Tujuan Latihan','Tanggal','Jenis','Durasi (menit)','Volume','Intensitas (%)','Frekuensi','RPE','Target Kehadiran','Catatan'];
+    const rows=[H,
+      ['Persiapan Umum','Kekuatan','Adaptasi anatomi dasar','2026-10-05','Fisik',60,'3 x 12',70,'3x/minggu',6,20,''],
+      ['Persiapan Umum','Kekuatan','Kekuatan tungkai','2026-10-07','Fisik',60,'4 x 10',75,'3x/minggu',7,20,'Fokus teknik'],
+      ['Persiapan Umum','Daya Tahan','Lari aerobik','2026-10-06','Fisik',45,'5 km',65,'2x/minggu',6,20,''],
+      ['Persiapan Khusus','Kecepatan','Reaksi dan kecepatan jurus','','Teknik',50,'6 x 400 m',80,'2x/minggu',7,18,'']];
+    const ins=[['Petunjuk pengisian'],[''],['Fase: Persiapan Umum / Persiapan Khusus / Pra Kompetisi / Kompetisi (atau angka 1–4).'],['Program: nama program, mis. Kekuatan, Daya Tahan, Kecepatan, Mobilitas. Baris dengan nama sama digabung jadi satu program.'],
+      ['Tujuan Latihan: wajib diisi, satu baris = satu sesi.'],['Tanggal: boleh format 2026-10-05 atau 05/10/2026. Kosongkan jika belum dijadwalkan.'],['Kolom lain opsional. Durasi, Intensitas, RPE, dan Target Kehadiran berupa angka.'],['Jika program dengan nama sama sudah ada di fase itu, sesi baru ditambahkan ke program tersebut.']];
+    const wb=XLSX.utils.book_new(), ws=XLSX.utils.aoa_to_sheet(rows);
+    ws['!cols']=[18,16,30,12,10,14,12,14,12,6,16,22].map(w=>({wch:w}));
+    XLSX.utils.book_append_sheet(wb,ws,'Program'); XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(ins),'Petunjuk');
+    XLSX.writeFile(wb,'template-program-latihan.xlsx');
+  });
+  const _rp=renderProgramTab;
+  renderProgramTab=function(){ _rp.apply(this,arguments); const c=$('importCard'); if(c) c.style.display=(currentProfile&&currentProfile.role==='coach')?'block':'none'; };
 })();
 </script>
 </body>
