@@ -5045,17 +5045,27 @@ function renderEvaluasi(){
    card('atl','clip','Jumlah Atlet','Rencana <b>'+C.ex+'</b>','Realisasi <b>'+C.pr+'</b>',C.rAtl)+
    card('bad','clip','Program Tidak Terlaksana','<b>'+C.bad+'</b> dari '+C.n+' program','&nbsp;',C.pBad,true)+'</div>'+
    '<button type="button" class="ev-note" data-ev="note">'+EV.bulb+'<div style="flex:1"><b>Catatan Evaluasi</b><span>'+note[0]+' '+note[1]+'</span></div>'+IC.chev.replace('class="chev"','style="width:16px;height:16px"')+'</button>';
-  const KW={'Daya Tahan':['daya tahan','endurance','aerob'],'Kekuatan':['kekuatan','strength'],'Kecepatan':['kecepatan','speed'],'Mobilitas':['mobilitas','fleksibilitas','mobility']};
-  const comp=Object.keys(KW).map(k=>{let t=0,d=0;programsCache.forEach(pr=>{if(KW[k].some(w=>(pr.name||'').toLowerCase().includes(w)))(pr.sessions||[]).forEach(x=>{t++;if(sessionStatus(x)==='selesai')d++;});});return {k,t,d,pc:t?Math.round(d/t*100):0};});
-  const ci={'Daya Tahan':'run','Kekuatan':'dumb','Kecepatan':'run','Mobilitas':'run'};
-  bot.innerHTML='<div class="ev-sec">'+EV.trend+'<div class="grow"><b>Progress Program Latihan</b><span>Perbandingan rencana vs realisasi.</span></div><button type="button" class="pill-btn" data-ev="chart">Lihat Grafik ›</button></div>'+
-   '<div class="ev-prog">'+comp.map(c=>'<button type="button" class="ev-card" data-ev="comp:'+c.k+'"><div class="t">'+IC[ci[c.k]].replace('<svg','<svg class="pi"')+'<div class="n">'+c.k+'</div></div><div class="row"><span>Pencapaian</span><b>'+c.pc+'%</b></div><div class="bar"><i style="width:'+c.pc+'%"></i></div></button>').join('')+'</div>';
+  // kartu progres mengikuti program yang benar-benar dibuat pelatih di fase-fase Program Latihan
+  const byName=new Map();
+  programsCache.forEach(pr=>{
+    const nm=String(pr.name||'').trim(); if(!nm) return; const key=nm.toLowerCase();
+    if(!byName.has(key)) byName.set(key,{k:nm,t:0,d:0,ph:new Set()});
+    const g=byName.get(key); g.ph.add(pr.phaseId);
+    (pr.sessions||[]).forEach(x=>{ g.t++; if(sessionStatus(x)==='selesai') g.d++; });
+  });
+  const comp=[...byName.values()].map(g=>({k:g.k,t:g.t,d:g.d,pc:g.t?Math.round(g.d/g.t*100):0,np:g.ph.size})).sort((a,b)=>b.t-a.t||a.k.localeCompare(b.k));
+  const iconFor=n=>/kekuatan|strength|beban|gym|power/i.test(n)?'dumb':'run';
+  const cards=comp.length
+    ? '<div class="ev-prog">'+comp.map(c=>'<button type="button" class="ev-card" data-ev="comp:'+encodeURIComponent(c.k)+'"><div class="t">'+IC[iconFor(c.k)].replace('<svg','<svg class="pi"')+'<div class="n">'+escapeHtml(c.k)+'</div></div><div class="row"><span>'+c.d+'/'+c.t+' sesi</span><b>'+c.pc+'%</b></div><div class="bar"><i style="width:'+c.pc+'%"></i></div></button>').join('')+'</div>'
+    : '<div class="empty-msg" style="margin-bottom:18px">Belum ada program latihan. Tambahkan program di fase pada tab Program Latihan, nanti progresnya muncul di sini.<br><button type="button" class="pill-btn" style="margin-top:10px" data-ev="goprog">Buka Program Latihan ›</button></div>';
+  bot.innerHTML='<div class="ev-sec">'+EV.trend+'<div class="grow"><b>Progress Program Latihan</b><span>Dari program yang kamu buat di tiap fase.</span></div><button type="button" class="pill-btn" data-ev="chart">Lihat Grafik ›</button></div>'+cards;
 }
 function evalDetail(kind){
   const C=window._ev||evalCalc(), ov=document.getElementById('dashDetailOverlay'); if(!ov) return;
+  if(kind==='goprog'){ document.querySelector('.tab-btn[data-tab="program"]').click(); window.scrollTo({top:0,behavior:'smooth'}); return; }
   if(kind==='chart'){ document.querySelector('.tab-btn[data-tab="program"]').click(); setTimeout(()=>{const w=document.getElementById('weeklySection'); if(w) w.scrollIntoView({behavior:'smooth'});},120); return; }
   let rows=C.wk, title='Rincian Evaluasi';
-  if(kind.startsWith('comp:')){ const k=kind.slice(5).toLowerCase(); title='Program '+kind.slice(5); rows=C.all.filter(x=>(x._pn||'').toLowerCase().includes(k.split(' ')[0])); }
+  if(kind.startsWith('comp:')){ const nm=decodeURIComponent(kind.slice(5)); title='Program '+nm; rows=C.all.filter(x=>String(x._pn||'').trim().toLowerCase()===nm.toLowerCase()); }
   else if(kind==='att') title='Kehadiran Latihan';
   else if(kind==='done') {title='Program Terlaksana'; rows=rows.filter(x=>x._st==='selesai');}
   else if(kind==='bad') {title='Program Tidak Terlaksana'; rows=rows.filter(x=>x._st==='batal');}
@@ -5066,7 +5076,7 @@ function evalDetail(kind){
     if(kind==='att'&&x.expected>0) bits.push('hadir '+(x.present||0)+'/'+x.expected);
     else{ if(x.duration||x.aDuration) bits.push('durasi '+(x.duration||'-')+'→'+(x.aDuration||'-'));
       if(x.rpe||x.aRpe) bits.push('RPE '+(x.rpe||'-')+'→'+(x.aRpe||'-')); }
-    return '<div class="detail-row"><div class="k">'+escapeHtml(x._pn||'-')+'</div><div>'+escapeHtml(bits.join(' · '))+'</div></div>';
+    return '<div class="detail-row"><div class="k">'+escapeHtml(kind.startsWith('comp:')?(x.target||x._pn||'-'):(x._pn||'-'))+'</div><div>'+escapeHtml(bits.join(' · '))+'</div></div>';
   };
   document.getElementById('dashDetailTitle').textContent=title;
   document.getElementById('dashDetailContent').innerHTML='<div class="ev-list">'+(rows.length?rows.map(line).join(''):'<div class="empty-msg">Belum ada sesi untuk ditampilkan.</div>')+'</div>';
