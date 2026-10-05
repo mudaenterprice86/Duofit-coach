@@ -703,6 +703,10 @@
 .pend-info{flex:1;min-width:140px}.pend-info b{display:block;font-size:13.5px}.pend-info span{font-size:11.5px;color:var(--muted);word-break:break-all}
 .pend-btns{display:flex;gap:6px}.pend-btns button{border-radius:10px;padding:8px 12px;font:600 12.5px 'Inter',sans-serif;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink)}
 .pend-btns button.ok{background:#14663A;border-color:#14663A;color:#fff}.pend-btns button.no{color:#C0392B;border-color:#F1C4C0}
+
+.ev-quick{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 16px}
+.ev-quick button{border:1px solid #BFE0CD;background:#fff;color:#0F7A43;border-radius:20px;padding:6px 11px;font:600 11.5px 'Inter',sans-serif;cursor:pointer}
+.ev-quick button:active{background:#E4F6EA}
 </style>
 </head>
 <body>
@@ -1101,9 +1105,9 @@ Daya tahan: Aerobik → lanjutan"></textarea>
       <div class="ev-head"><h2>Evaluasi</h2><p>Pantau progres, analisis hasil, dan rencanakan langkah berikutnya.</p></div>
       <div class="ev-hero">
         <div class="hi"><div class="section-title" id="dashGreeting">Selamat datang</div>
-          <div class="section-sub" style="margin:0">Berikut ringkasan evaluasi program latihan minggu ini.</div>
+          <div class="section-sub" id="evGreetSub" style="margin:0">Berikut ringkasan evaluasi program latihan minggu ini.</div>
           <div class="quote-banner" id="coachQuoteBanner"></div></div>
-        <button type="button" class="ev-week" id="evWeek" data-ev="all"><b>Minggu ke-1</b><span>-</span></button>
+        <button type="button" class="ev-week" id="evWeek" data-ev="range" aria-label="Ubah tanggal evaluasi"><b>Minggu ke-1</b><span>-</span></button>
       </div>
       <div id="pendingBoxDash"></div>
       <div id="evalTop"></div>
@@ -4995,16 +4999,24 @@ const EV = {
 const pn=v=>{const n=parseFloat(String(v==null?'':v).replace(',','.'));return isNaN(n)?null:n;};
 const avgOf=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
 const f1=n=>n==null?'-':(Math.round(n*10)/10).toString().replace('.',',');
+let evRange=null;
+try{ const r=JSON.parse(localStorage.getItem('duofitEvRange')||'null'); if(r&&r.from&&r.to&&r.from<=r.to) evRange=r; }catch(_){}
+const fromIso=t=>new Date(t+'T00:00:00');
+function mondayOf(d){ const m=new Date(d); m.setDate(d.getDate()-((d.getDay()+6)%7)); m.setHours(0,0,0,0); return m; }
 function evalData(){
   const all=[]; programsCache.forEach(pr=>(pr.sessions||[]).forEach(x=>all.push(Object.assign({},x,{_pn:pr.name,_st:sessionStatus(x)}))));
-  const now=new Date(), mon=new Date(now); mon.setDate(now.getDate()-((now.getDay()+6)%7)); mon.setHours(0,0,0,0);
-  const sun=new Date(mon); sun.setDate(mon.getDate()+6);
-  const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-  let wk=all.filter(x=>x.date&&x.date>=iso(mon)&&x.date<=iso(sun)), scope='minggu ini';
-  if(!wk.length&&all.length){wk=all;scope='semua periode';}
-  const ds=all.map(x=>x.date).filter(Boolean).sort(); let wn=1;
-  if(ds.length){const f=new Date(ds[0]+'T00:00:00'); f.setDate(f.getDate()-((f.getDay()+6)%7)); wn=Math.max(1,Math.floor((mon-f)/6048e5)+1);}
-  return {all,wk,scope,mon,sun,wn};
+  const curMon=mondayOf(new Date()); const curSun=new Date(curMon); curSun.setDate(curMon.getDate()+6);
+  const mon=evRange?fromIso(evRange.from):curMon, sun=evRange?fromIso(evRange.to):curSun;
+  const fi=isoLocal(mon), ti=isoLocal(sun);
+  let wk=all.filter(x=>x.date&&x.date>=fi&&x.date<=ti), scope;
+  const isCur=fi===isoLocal(curMon)&&ti===isoLocal(curSun);
+  const isWeek=mon.getDay()===1&&Math.round((sun-mon)/864e5)===6;
+  scope=isCur?'minggu ini':(isWeek?'minggu terpilih':'periode terpilih');
+  if(!evRange&&!wk.length&&all.length){ wk=all; scope='semua periode'; }
+  const ds=all.map(x=>x.date).filter(Boolean).sort(); let wn=0;
+  if(ds.length&&isWeek){ const f=mondayOf(fromIso(ds[0])); wn=Math.round((mon-f)/6048e5)+1; }
+  const label=(isWeek&&wn>=1)?'Minggu ke-'+wn:(isWeek?'Sebelum program':'Periode kustom');
+  return {all,wk,scope,mon,sun,wn,label,isCur};
 }
 function evalCalc(){
   const E=evalData(), wk=E.wk, n=wk.length;
@@ -5023,9 +5035,11 @@ function renderEvaluasi(){
   if(!currentProfile||currentProfile.role!=='coach') return;
   const top=document.getElementById('evalTop'), bot=document.getElementById('evalBottom'); if(!top||!bot) return;
   const C=evalCalc(); window._ev=C;
-  const fm=d=>d.toLocaleDateString('id-ID',{day:'numeric',month:'long'});
+  const sameY=C.mon.getFullYear()===C.sun.getFullYear();
+  const fm=(d,y)=>d.toLocaleDateString('id-ID',y?{day:'numeric',month:'long',year:'numeric'}:{day:'numeric',month:'long'});
   const wkEl=document.getElementById('evWeek');
-  wkEl.innerHTML='<b>Minggu ke-'+C.wn+'</b><span>'+fm(C.mon)+' – '+fm(C.sun)+' '+C.sun.getFullYear()+'</span>';
+  wkEl.innerHTML='<b>'+C.label+' <em style="font-style:normal;color:#0F7A43">&#9998;</em></b><span>'+fm(C.mon,!sameY)+' – '+fm(C.sun,true)+'</span>';
+  const gs=document.getElementById('evGreetSub'); if(gs) gs.textContent='Berikut ringkasan evaluasi program latihan '+C.scope+'.';
   const card=(kind,ic,title,l1,l2,pc,inv)=>'<button type="button" class="ev-card'+(inv?' badc':'')+'" data-ev="'+kind+'"><div class="t">'+EV[ic]+'<div class="n">'+title+'<small>'+l1+'<br>'+l2+'</small></div><span class="pc'+(inv?' bad':'')+'">'+(pc==null?'-':pc+'%')+'</span></div><div class="bar"><i style="width:'+Math.min(100,pc||0)+'%"></i></div></button>';
   const kp=(cls,ic,v,l,c,kind)=>'<button type="button" class="ev-k '+cls+'" data-ev="'+kind+'">'+EV[ic]+'<div class="v">'+v+'</div><div class="l">'+l+'</div><div class="c">'+c+'</div></button>';
   const volP=C.lv?escapeHtml(C.lv.volume||'-'):f1(C.vol.p), volA=C.lv?escapeHtml(C.lv.aVolume||'-'):f1(C.vol.a);
@@ -5060,7 +5074,41 @@ function renderEvaluasi(){
     : '<div class="empty-msg" style="margin-bottom:18px">Belum ada program latihan. Tambahkan program di fase pada tab Program Latihan, nanti progresnya muncul di sini.<br><button type="button" class="pill-btn" style="margin-top:10px" data-ev="goprog">Buka Program Latihan ›</button></div>';
   bot.innerHTML='<div class="ev-sec">'+EV.trend+'<div class="grow"><b>Progress Program Latihan</b><span>Dari program yang kamu buat di tiap fase.</span></div><button type="button" class="pill-btn" data-ev="chart">Lihat Grafik ›</button></div>'+cards;
 }
+function openEvRange(){
+  const C=window._ev||evalCalc();
+  const ov=document.createElement('div'); ov.className='dlg-ov';
+  ov.innerHTML='<div class="dlg" role="dialog" aria-modal="true"><h3>Ubah Tanggal Evaluasi</h3><p style="margin-bottom:12px">Pilih rentang tanggal yang ingin dievaluasi.</p>'+
+    '<div class="fb two"><div><label for="evFrom">Dari</label><input type="date" id="evFrom"></div><div><label for="evTo">Sampai</label><input type="date" id="evTo"></div></div>'+
+    '<div class="ev-quick"><button type="button" data-q="prev">‹ Minggu lalu</button><button type="button" data-q="cur">Minggu ini</button><button type="button" data-q="next">Minggu depan ›</button><button type="button" data-q="month">Bulan ini</button><button type="button" data-q="all">Semua sesi</button></div>'+
+    '<div class="dlg-btns"><button type="button" class="c">Batal</button><button type="button" class="ok y">Terapkan</button></div></div>';
+  document.body.appendChild(ov);
+  const $=q=>ov.querySelector(q), from=$('#evFrom'), to=$('#evTo');
+  from.value=isoLocal(C.mon); to.value=isoLocal(C.sun);
+  const close=()=>{ document.removeEventListener('keydown',kd); ov.remove(); }; const kd=e=>{ if(e.key==='Escape') close(); };
+  document.addEventListener('keydown',kd); ov.addEventListener('click',e=>{ if(e.target===ov) close(); }); $('.c').onclick=close;
+  const setR=(a,b)=>{ from.value=isoLocal(a); to.value=isoLocal(b); };
+  ov.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{
+    const q=b.dataset.q, base=mondayOf(fromIso(from.value||isoLocal(new Date()))), cm=mondayOf(new Date());
+    const wk=(m)=>{ const e=new Date(m); e.setDate(m.getDate()+6); setR(m,e); };
+    if(q==='cur') wk(cm);
+    else if(q==='prev'){ const m=new Date(base); m.setDate(base.getDate()-7); wk(m); }
+    else if(q==='next'){ const m=new Date(base); m.setDate(base.getDate()+7); wk(m); }
+    else if(q==='month'){ const n=new Date(); setR(new Date(n.getFullYear(),n.getMonth(),1),new Date(n.getFullYear(),n.getMonth()+1,0)); }
+    else if(q==='all'){ const ds=C.all.map(x=>x.date).filter(Boolean).sort(); if(!ds.length){ notify('Belum ada sesi bertanggal.','warn'); return; } setR(fromIso(ds[0]),fromIso(ds[ds.length-1])); }
+  });
+  $('.y').onclick=()=>{
+    if(!from.value||!to.value){ notify('Isi tanggal awal dan akhir.','warn'); return; }
+    if(from.value>to.value){ notify('Tanggal akhir tidak boleh sebelum tanggal awal.','warn'); return; }
+    const d=Math.round((fromIso(to.value)-fromIso(from.value))/864e5);
+    if(d>730){ notify('Rentang terlalu panjang (maksimal 2 tahun).','warn'); return; }
+    const cm=mondayOf(new Date()), ce=new Date(cm); ce.setDate(cm.getDate()+6);
+    evRange=(from.value===isoLocal(cm)&&to.value===isoLocal(ce))?null:{from:from.value,to:to.value};
+    try{ if(evRange) localStorage.setItem('duofitEvRange',JSON.stringify(evRange)); else localStorage.removeItem('duofitEvRange'); }catch(_){}
+    close(); renderEvaluasi(); notify('Tanggal evaluasi diperbarui','ok');
+  };
+}
 function evalDetail(kind){
+  if(kind==='range'){ openEvRange(); return; }
   const C=window._ev||evalCalc(), ov=document.getElementById('dashDetailOverlay'); if(!ov) return;
   if(kind==='goprog'){ document.querySelector('.tab-btn[data-tab="program"]').click(); window.scrollTo({top:0,behavior:'smooth'}); return; }
   if(kind==='chart'){ document.querySelector('.tab-btn[data-tab="program"]').click(); setTimeout(()=>{const w=document.getElementById('weeklySection'); if(w) w.scrollIntoView({behavior:'smooth'});},120); return; }
